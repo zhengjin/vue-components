@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "team components",
   "author": "zhengjin12@aliyun.comm",
-  "private": true,
+  "private": false,
   "scripts": {
     "bootstrap": "yarn || npm i",
     "build:file": "node build/bin/iconInit.js & node build/bin/build-entry.js & node build/bin/i18n.js & node build/bin/version.js",
