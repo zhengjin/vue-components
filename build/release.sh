@@ -16,7 +16,7 @@ then
   VERSION=$VERSION npm run dist
 
   # ssr test
-  node test/ssr/require.test.js            
+  # node test/ssr/require.test.js
 
   # publish theme
   echo "Releasing theme-chalk $VERSION ..."
