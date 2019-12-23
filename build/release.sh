@@ -18,17 +18,17 @@ then
   # ssr test
   # node test/ssr/require.test.js
 
-  # publish theme
-  # echo "Releasing theme-chalk $VERSION ..."
-  # cd packages/theme-chalk
-  # npm version $VERSION --message "[release] $VERSION"
-  # if [[ $VERSION =~ "beta" ]]
-  # then
-  #   npm publish --tag beta
-  # else
-  #   npm publish
-  # fi
-  # cd ../..
+  publish theme
+  echo "Releasing theme-chalk $VERSION ..."
+  cd packages/theme-chalk
+  npm version $VERSION --message "[release] $VERSION"
+  if [[ $VERSION =~ "beta" ]]
+  then
+    npm publish --tag beta
+  else
+    npm publish
+  fi
+  cd ../..
 
   # commit
   git add -A
