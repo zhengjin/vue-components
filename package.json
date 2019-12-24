@@ -102,6 +102,26 @@
     "webpack-merge": "^4.1.0",
     "webpack-node-externals": "^1.7.2"
   },
+  "faas": [
+    {
+      "domain": "element",
+      "public": "temp_web/element"
+    },
+    {
+      "domain": "element-theme",
+      "public": "examples/element-ui",
+      "build": [
+        "yarn",
+        "npm run deploy:build"
+      ]
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:ElemeFE/element.git"
+  },
+  "unpkg": "lib/index.js",
+  "style": "lib/theme-chalk/index.css",
   "engines": {
     "node": ">= 6.0.0",
     "npm": ">= 3.0.0"
