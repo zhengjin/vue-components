@@ -24,7 +24,7 @@
 </template>
 <script>
 export default {
-  name: 'OSButton',
+  name: 'OS-Button',
 
   inject: {
     elForm: {
