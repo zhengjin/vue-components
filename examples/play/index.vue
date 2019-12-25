@@ -1,23 +1,15 @@
 <template>
-  <div id="app">
-    <router-view/>
+  <div style="margin: 20px;">
+    <el-input v-model="input" placeholder="请输入内容"></el-input>
   </div>
 </template>
 
 <script>
-
-export default {
-  name: 'app'
-}
+  export default {
+    data() {
+      return {
+        input: 'Hello Element UI!'
+      };
+    }
+  };
 </script>
-
-<style>
-  #app {
-    font-family: 'Avenir', Helvetica, Arial, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-align: center;
-    color: #2c3e50;
-    margin-top: 60px;
-  }
-</style>

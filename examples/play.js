@@ -1,12 +1,10 @@
-import Vue from 'vue'
-import App from './play/index'
+import Vue from 'vue';
+import Element from 'main/index.js';
+import App from './play/index.vue';
+import 'packages/theme-chalk/src/index.scss';
 
-import {router} from './play/router'
+Vue.use(Element);
 
-// import 'packages/theme-chalk/src/index.scss'
-// Vue.config.productionTip = false
-
-new Vue({
-  router,
+new Vue({ // eslint-disable-line
   render: h => h(App)
-}).$mount('#app')
+}).$mount('#app');
