@@ -1,6 +1,6 @@
 {
   "name": "oversea-vue",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "description": "team components",
   "author": "zhengjin12@aliyun.comm",
   "private": false,
@@ -33,7 +33,9 @@
     "unit": "jest --config test/unit/jest.conf.js --coverage"
   },
   "dependencies": {
-    "normalize-wheel": "^1.0.1",
+    "normalize-wheel": "^1.0.1"
+  },
+  "peerDependencies": {
     "vue": "^2.5.2"
   },
   "devDependencies": {
