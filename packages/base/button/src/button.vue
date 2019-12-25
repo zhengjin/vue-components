@@ -1,6 +1,6 @@
 <template>
   <button
-    class="os-button"
+    class="el-button"
     @click="handleClick"
     :disabled="buttonDisabled || loading"
     :autofocus="autofocus"
@@ -24,7 +24,7 @@
 </template>
 <script>
 export default {
-  name: 'common-button',
+  name: 'OSButton',
 
   inject: {
     elForm: {
