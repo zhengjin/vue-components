@@ -68,6 +68,7 @@ $--border-color-extra-light: #F2F6FC !default;
 // Background
 /// color|1|Background Color|4
 $--background-color-base: #F5F7FA !default;
+$--color-background-red: linear-gradient(right, rgb(228, 5, 33), rgb(131, 31, 130)) !default;
 
 /* Link
 -------------------------- */
@@ -546,7 +547,7 @@ $--button-mini-padding-horizontal: 15px !default;
 /// color||Color|0
 $--button-default-font-color: $--color-text-regular !default;
 /// color||Color|0
-$--button-default-background-color: $--color-white !default;
+$--button-default-background-color: $--color-background-red !default;
 /// color||Color|0
 $--button-default-border-color: $--border-color-base !default;
 
