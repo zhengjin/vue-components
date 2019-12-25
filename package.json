@@ -1,6 +1,6 @@
 {
   "name": "oversea-vue",
-  "version": "1.0.4",
+  "version": "1.0.6",
   "description": "team components",
   "author": "zhengjin12@aliyun.comm",
   "private": false,
@@ -8,9 +8,9 @@
   "main": "lib/element-ui.common.js",
   "files": [
     "lib",
-    "src",
-    "packages"
+    "types"
   ],
+  "typings": "types/index.d.ts",
   "scripts": {
     "bootstrap": "yarn || npm i",
     "build:file": "node build/bin/iconInit.js & node build/bin/build-entry.js & node build/bin/i18n.js & node build/bin/version.js",
