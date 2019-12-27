@@ -8,6 +8,11 @@
       <div><el-radio v-model="radio" label="1" border style="width: 100%">Split equally</el-radio></div>
       <div><el-radio v-model="radio" label="2" border style="width: 100%">Split individually</el-radio></div>
     </div>
+
+    <div>
+      <el-checkbox v-model="checked1">备选项1</el-checkbox>
+      <el-checkbox v-model="checked2">备选项</el-checkbox>
+    </div>
   </div>
 </template>
 
@@ -16,7 +21,9 @@
     data() {
       return {
         input: 'Hello Element UI!',
-        radio: '1'
+        radio: '1',
+        checked1: false,
+        checked2: true
       };
     }
   };

@@ -19,6 +19,7 @@ $--color-transition-base: color .2s cubic-bezier(.645, .045, .355, 1) !default;
 $--color-primary: #409EFF !default;
 /// color|1|Background Color|4
 $--color-white: #FFFFFF !default;
+$--color-dark-blue: #005890 !default;
 /// color|1|Background Color|4
 $--color-black: #000000 !default;
 $--color-primary-light-1: mix($--color-white, $--color-primary, 10%) !default; /* 53a8ff */
@@ -184,9 +185,9 @@ $--checkbox-disabled-checked-icon-color: $--color-text-placeholder !default;
 
 /// color||Color|0
 $--checkbox-checked-font-color: $--color-primary !default;
-$--checkbox-checked-input-border-color: $--color-primary !default;
+$--checkbox-checked-input-border-color: $--color-dark-blue !default;
 /// color||Color|0
-$--checkbox-checked-background-color: $--color-primary !default;
+$--checkbox-checked-background-color: $--color-dark-blue !default;
 $--checkbox-checked-icon-color: $--fill-base !default;
 
 $--checkbox-input-border-color-hover: $--color-primary !default;
@@ -248,12 +249,13 @@ $--radio-disabled-checked-input-border-color: $--disabled-border-base !default;
 $--radio-disabled-checked-input-fill: $--disabled-fill-base !default;
 $--radio-disabled-checked-icon-color: $--color-text-placeholder !default;
 
+$--radio-color-border: #3D84C1 !default;
 /// color||Color|0
 $--radio-checked-font-color: $--color-primary !default;
 /// color||Color|0
 $--radio-checked-input-border-color: $--color-primary !default;
 /// color||Color|0
-$--radio-checked-input-background-color: $--color-white !default;
+$--radio-checked-input-background-color: $--color-dark-blue !default;
 /// color||Color|0
 $--radio-checked-icon-color: $--color-primary !default;
 

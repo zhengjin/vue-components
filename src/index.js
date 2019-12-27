@@ -2,6 +2,8 @@
 
 import Button from '../packages/button/index.js';
 import ButtonGroup from '../packages/button-group/index.js';
+import Input from '../packages/input/index.js';
+import InputNumber from '../packages/input-number/index.js';
 import Pagination from '../packages/pagination/index.js';
 import Dialog from '../packages/dialog/index.js';
 import Autocomplete from '../packages/autocomplete/index.js';
@@ -12,8 +14,6 @@ import Menu from '../packages/menu/index.js';
 import Submenu from '../packages/submenu/index.js';
 import MenuItem from '../packages/menu-item/index.js';
 import MenuItemGroup from '../packages/menu-item-group/index.js';
-import Input from '../packages/input/index.js';
-import InputNumber from '../packages/input-number/index.js';
 import Radio from '../packages/radio/index.js';
 import RadioGroup from '../packages/radio-group/index.js';
 import RadioButton from '../packages/radio-button/index.js';
@@ -87,6 +87,8 @@ import CollapseTransition from 'element-ui/src/transitions/collapse-transition';
 const components = [
   Button,
   ButtonGroup,
+  Input,
+  InputNumber,
   Pagination,
   Dialog,
   Autocomplete,
@@ -97,8 +99,6 @@ const components = [
   Submenu,
   MenuItem,
   MenuItemGroup,
-  Input,
-  InputNumber,
   Radio,
   RadioGroup,
   RadioButton,
@@ -205,6 +205,8 @@ export default {
   // Loading,
   Button,
   ButtonGroup,
+  Input,
+  InputNumber,
   Pagination,
   Dialog,
   Autocomplete,
@@ -215,8 +217,6 @@ export default {
   Submenu,
   MenuItem,
   MenuItemGroup,
-  Input,
-  InputNumber,
   Radio,
   RadioGroup,
   RadioButton,
