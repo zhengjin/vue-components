@@ -116,7 +116,7 @@
     height: $--input-height;
     line-height: $--input-height;
     outline: none;
-    padding: 0 15px;
+    padding: 0 15px 0 0;
     transition: $--border-transition-base;
     width: 100%;
 
@@ -218,6 +218,18 @@
   @include m(suffix) {
     .el-input__inner {
       padding-right: 30px;
+    }
+
+    .el-input-border-focus {
+      height: 1px;;
+      background-color: $--input-active-color;
+      display: block;;
+    }
+
+    .el-input-border-none {
+      height: 1px;;
+      background-color: $--input-border-color;
+      display: block;;
     }
   }
 

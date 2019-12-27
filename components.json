@@ -1,6 +1,8 @@
 {
   "button": "./packages/button/index.js",
   "button-group": "./packages/button-group/index.js",
+  "input": "./packages/input/index.js",
+  "input-number": "./packages/input-number/index.js",
 
   "pagination": "./packages/pagination/index.js",
   "dialog": "./packages/dialog/index.js",
@@ -12,8 +14,6 @@
   "submenu": "./packages/submenu/index.js",
   "menu-item": "./packages/menu-item/index.js",
   "menu-item-group": "./packages/menu-item-group/index.js",
-  "input": "./packages/input/index.js",
-  "input-number": "./packages/input-number/index.js",
   "radio": "./packages/radio/index.js",
   "radio-group": "./packages/radio-group/index.js",
   "radio-button": "./packages/radio-button/index.js",
