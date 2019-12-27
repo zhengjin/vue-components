@@ -41,7 +41,7 @@
     border-color: mix($--color-white, $border-color, $--button-hover-tint-percent);
     color: $color;
   }
-  
+
   &:active {
     background: mix($--color-black, $background-color, $--button-active-shade-percent);
     border-color: mix($--color-black, $border-color, $--button-active-shade-percent);
@@ -68,6 +68,43 @@
 
   &.is-plain {
     @include button-plain($background-color);
+  }
+}
+
+@mixin button-variant-grade($color, $background-color, $border-color) {
+  color: $color;
+  background: $background-color;
+  border-color: $border-color;
+
+  &:hover,
+  &:focus {
+    background: $background-color;
+    border-color: $border-color;
+    color: $color;
+  }
+
+  &:active {
+    background: $--button-active-grade-color;
+    border-color: $border-color;
+    color: $--button-text-grade-color;
+    outline: none;
+  }
+
+  &.is-active {
+    background: $background-color;
+    border-color: $border-color;
+    color: $--button-text-grade-color;
+  }
+
+  &.is-disabled {
+    &,
+    &:hover,
+    &:focus,
+    &:active {
+      color: $--button-disable-text-color;
+      background: $--background-disable-color;
+      border-color: $--background-disable-color;
+    }
   }
 }
 

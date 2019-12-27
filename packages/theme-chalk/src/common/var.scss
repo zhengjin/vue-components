@@ -6,12 +6,12 @@
 
 /* Transition
 -------------------------- */
-$--all-transition: all .3s cubic-bezier(.645,.045,.355,1) !default;
+$--all-transition: all .3s cubic-bezier(.645, .045, .355, 1) !default;
 $--fade-transition: opacity 300ms cubic-bezier(0.23, 1, 0.32, 1) !default;
 $--fade-linear-transition: opacity 200ms linear !default;
 $--md-fade-transition: transform 300ms cubic-bezier(0.23, 1, 0.32, 1), opacity 300ms cubic-bezier(0.23, 1, 0.32, 1) !default;
-$--border-transition-base: border-color .2s cubic-bezier(.645,.045,.355,1) !default;
-$--color-transition-base: color .2s cubic-bezier(.645,.045,.355,1) !default;
+$--border-transition-base: border-color .2s cubic-bezier(.645, .045, .355, 1) !default;
+$--color-transition-base: color .2s cubic-bezier(.645, .045, .355, 1) !default;
 
 /* Color
 -------------------------- */
@@ -68,6 +68,13 @@ $--border-color-extra-light: #F2F6FC !default;
 // Background
 /// color|1|Background Color|4
 $--background-color-base: #F5F7FA !default;
+$--background-color-grade: linear-gradient(to left, #E40521 20%, #831F82 100%) !default;
+$--background-disable-color: #E5E5E5 !default;
+
+// Button
+$--button-active-grade-color: linear-gradient(to left, #A00014 20%, #50084F 100%) !default;
+$--button-text-grade-color: #FFFFFF3C !default;
+$--button-disable-text-color: #C0C4CC !default;
 
 /* Link
 -------------------------- */
@@ -209,8 +216,6 @@ $--checkbox-button-checked-background-color: $--color-primary !default;
 $--checkbox-button-checked-font-color: $--color-white !default;
 /// color||Color|0
 $--checkbox-button-checked-border-color: $--color-primary !default;
-
-
 
 /* Radio
 -------------------------- */
@@ -480,8 +485,8 @@ $--cascader-menu-radius: $--border-radius-base !default;
 $--cascader-menu-border: solid 1px $--border-color-light !default;
 $--cascader-menu-shadow: $--box-shadow-light !default;
 $--cascader-node-background-hover: $--background-color-base !default;
-$--cascader-node-color-disabled:$--color-text-placeholder !default;
-$--cascader-color-empty:$--color-text-placeholder !default;
+$--cascader-node-color-disabled: $--color-text-placeholder !default;
+$--cascader-color-empty: $--color-text-placeholder !default;
 $--cascader-tag-background: #f0f2f5;
 
 /* Group
@@ -580,7 +585,8 @@ $--button-danger-border-color: $--color-danger !default;
 /// color||Color|0
 $--button-danger-font-color: $--color-white !default;
 /// color||Color|0
-$--button-danger-background-color: $--color-danger !default;
+//$--button-danger-background-color: $--color-danger !default;
+$--button-danger-background-color: $--background-color-grade !default;
 /// color||Color|0
 $--button-info-border-color: $--color-info !default;
 /// color||Color|0
@@ -590,7 +596,6 @@ $--button-info-background-color: $--color-info !default;
 
 $--button-hover-tint-percent: 20% !default;
 $--button-active-shade-percent: 10% !default;
-
 
 /* cascader
 -------------------------- */

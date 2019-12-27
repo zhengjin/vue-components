@@ -1,4 +1,7 @@
 {
+  "button": "./packages/button/index.js",
+  "button-group": "./packages/button-group/index.js",
+
   "pagination": "./packages/pagination/index.js",
   "dialog": "./packages/dialog/index.js",
   "autocomplete": "./packages/autocomplete/index.js",
@@ -21,8 +24,6 @@
   "select": "./packages/select/index.js",
   "option": "./packages/option/index.js",
   "option-group": "./packages/option-group/index.js",
-  "button": "./packages/button/index.js",
-  "button-group": "./packages/button-group/index.js",
   "table": "./packages/table/index.js",
   "table-column": "./packages/table-column/index.js",
   "date-picker": "./packages/date-picker/index.js",
@@ -42,7 +43,6 @@
   "alert": "./packages/alert/index.js",
   "notification": "./packages/notification/index.js",
   "slider": "./packages/slider/index.js",
-  "loading": "./packages/loading/index.js",
   "icon": "./packages/icon/index.js",
   "row": "./packages/row/index.js",
   "col": "./packages/col/index.js",

@@ -131,7 +131,7 @@
     @include button-variant($--button-warning-font-color, $--button-warning-background-color, $--button-warning-border-color);
   }
   @include m(danger) {
-    @include button-variant($--button-danger-font-color, $--button-danger-background-color, $--button-danger-border-color);
+    @include button-variant-grade($--button-danger-font-color, $--button-danger-background-color, $--button-danger-border-color);
   }
   @include m(info) {
     @include button-variant($--button-info-font-color, $--button-info-background-color, $--button-info-border-color);
@@ -234,7 +234,7 @@
       z-index: 1;
     }
   }
-  
+
   & > .el-dropdown {
     & > .el-button {
       border-top-left-radius: 0;
