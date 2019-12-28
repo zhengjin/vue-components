@@ -165,7 +165,7 @@
     width: $--radio-input-width;
     height: $--radio-input-height;
     background-color: $--radio-input-background-color;
-    position: relative;
+    //position: relative;
     cursor: pointer;
     display: inline-block;
     box-sizing: border-box;
@@ -173,6 +173,9 @@
     &:hover {
       border-color: $--radio-input-border-color-hover;
     }
+
+    position: fixed;
+    right: 40px;
   }
 
   @include e(original) {
