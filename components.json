@@ -8,7 +8,6 @@
   "checkbox": "./packages/checkbox/index.js",
   "checkbox-button": "./packages/checkbox-button/index.js",
   "checkbox-group": "./packages/checkbox-group/index.js",
-
   "input-number": "./packages/input-number/index.js",
   "pagination": "./packages/pagination/index.js",
   "dialog": "./packages/dialog/index.js",
