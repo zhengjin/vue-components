@@ -1,6 +1,6 @@
 {
   "name": "oversea-vue",
-  "version": "1.0.21",
+  "version": "1.0.26",
   "description": "team components",
   "author": "zhengjin12@aliyun.comm",
   "private": false,
@@ -8,8 +8,6 @@
   "main": "lib/element-ui.common.js",
   "files": [
     "lib",
-    "src",
-    "packages",
     "types"
   ],
   "typings": "types/index.d.ts",
