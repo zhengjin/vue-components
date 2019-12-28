@@ -1,11 +1,11 @@
 {
   "name": "oversea-vue",
-  "version": "1.0.28",
+  "version": "1.0.29",
   "description": "team components",
   "author": "zhengjin12@aliyun.comm",
   "private": false,
   "license": "MIT",
-  "main": "lib/element-ui.common.js",
+  "main": "lib/oversea-vue.common.js",
   "files": [
     "lib",
     "types"
