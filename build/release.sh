@@ -2,7 +2,7 @@
 set -e
 
 git checkout master
-git merge overseas
+git merge overseasTemp
 
 VERSION=`npx select-version-cli`
 
@@ -38,9 +38,9 @@ then
   # publish
   git push eleme master
   git push eleme refs/tags/v$VERSION
-  git checkout overseas
+  git checkout overseasTemp
   git rebase master
-  git push eleme overseas
+  git push eleme overseasTemp
 
   if [[ $VERSION =~ "beta" ]]
   then
