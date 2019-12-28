@@ -77,6 +77,18 @@
   width: 100%;
   @include scroll-bar;
 
+  & .el-input-border-focus {
+    height: 1px;;
+    background-color: $--input-active-color;
+    display: block;;
+  }
+
+  & .el-input-border-none {
+    height: 1px;;
+    background-color: $--input-border-color;
+    display: block;;
+  }
+
   & .el-input__clear {
     color: $--input-icon-color;
     font-size: $--input-font-size;
@@ -218,18 +230,6 @@
   @include m(suffix) {
     .el-input__inner {
       padding-right: 30px;
-    }
-
-    .el-input-border-focus {
-      height: 1px;;
-      background-color: $--input-active-color;
-      display: block;;
-    }
-
-    .el-input-border-none {
-      height: 1px;;
-      background-color: $--input-border-color;
-      display: block;;
     }
   }
 

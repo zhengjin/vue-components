@@ -79,11 +79,11 @@
           :class="['el-input__validateIcon', validateIcon]">
         </i>
       </span>
+      <i :class="`el-input-border-${focused ? 'focus' : 'none'}`"></i>
       <!-- 后置元素 -->
       <div class="el-input-group__append" v-if="$slots.append">
         <slot name="append"></slot>
       </div>
-      <i :class="`el-input-border-${focused ? 'focus' : 'none'}`"></i>
     </template>
     <textarea
       v-else
