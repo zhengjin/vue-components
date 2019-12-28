@@ -1,4 +1,4 @@
-import { arrayFind } from 'element-ui/src/utils/util';
+import { arrayFind } from 'oversea-vue/src/utils/util';
 import { getRowIdentity } from '../util';
 
 export default {

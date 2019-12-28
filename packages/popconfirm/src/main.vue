@@ -15,16 +15,16 @@
       {{title}}
     </p>
     <div class="el-popconfirm__action">
-      <el-button 
-        size="mini" 
-        :type="cancelButtonType" 
+      <el-button
+        size="mini"
+        :type="cancelButtonType"
         @click="cancel"
       >
         {{cancelButtonText}}
       </el-button>
-      <el-button 
-        size="mini" 
-        :type="confirmButtonType" 
+      <el-button
+        size="mini"
+        :type="confirmButtonType"
         @click="confirm"
       >
         {{confirmButtonText}}
@@ -36,9 +36,9 @@
 </template>
 
 <script>
-import ElPopover from 'element-ui/packages/popover';
-import ElButton from 'element-ui/packages/button';
-import {t} from 'element-ui/src/locale';
+import ElPopover from 'oversea-vue/packages/popover';
+import ElButton from 'oversea-vue/packages/button';
+import {t} from 'oversea-vue/src/locale';
 
 export default {
   name: 'ElPopconfirm',
