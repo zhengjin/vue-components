@@ -2,7 +2,7 @@
 set -e
 
 git checkout master
-git merge dev
+git merge overseasTemp
 
 VERSION=`npx select-version-cli`
 
@@ -16,7 +16,7 @@ then
   VERSION=$VERSION npm run dist
 
   # ssr test
-  node test/ssr/require.test.js            
+  node test/ssr/require.test.js
 
   # publish theme
   echo "Releasing theme-chalk $VERSION ..."
@@ -38,9 +38,9 @@ then
   # publish
   git push eleme master
   git push eleme refs/tags/v$VERSION
-  git checkout dev
+  git checkout overseasTemp
   git rebase master
-  git push eleme dev
+  git push eleme overseasTemp
 
   if [[ $VERSION =~ "beta" ]]
   then
