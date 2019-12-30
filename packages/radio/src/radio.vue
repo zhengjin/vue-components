@@ -13,15 +13,11 @@
     :aria-disabled="isDisabled"
     :tabindex="tabIndex"
     @keydown.space.stop.prevent="model = isDisabled ? model : label">
-    <span class="el-radio__input"
+    <span class="el-radio__input" style="width: 100%"
       :class="{
         'is-disabled': isDisabled,
         'is-checked': model === label
       }">
-      <span class="el-radio__label" @keydown.stop>
-        <slot></slot>
-        <template v-if="!$slots.default">{{label}}</template>
-      </span>
       <span class="el-radio__inner"></span>
       <input
         ref="radio"
@@ -35,8 +31,11 @@
         @change="handleChange"
         :name="name"
         :disabled="isDisabled"
-        tabindex="-1"
-      >
+        tabindex="-1">
+      <span class="el-radio__label" @keydown.stop>
+        <slot></slot>
+        <template v-if="!$slots.default">{{label}}</template>
+      </span>
     </span>
   </label>
 </template>

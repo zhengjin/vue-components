@@ -19,17 +19,17 @@
   @include when(bordered) {
     padding: $--radio-bordered-padding;
     border-radius: $--border-radius-base;
-    border: $--border-base;
+    //border: $--border-base;
     box-sizing: border-box;
     height: $--radio-bordered-height;
 
     &.is-checked {
-      border-color: $--color-primary;
+      //border-color: $--color-primary;
     }
 
     &.is-disabled {
       cursor: not-allowed;
-      border-color: $--border-color-lighter;
+      //border-color: $--border-color-lighter;
     }
 
     & + .el-radio.is-bordered {
@@ -43,9 +43,14 @@
       border-radius: $--button-medium-border-radius;
       height: $--radio-bordered-medium-height;
       .el-radio__label {
+        position: relative;
+        //top: 5px;
         font-size: $--button-medium-font-size;
       }
       .el-radio__inner {
+        position: absolute;
+        right: 0;
+        top: -5px;
         height: $--radio-bordered-medium-input-height;
         width: $--radio-bordered-medium-input-width;
       }
@@ -96,7 +101,7 @@
     @include when(disabled) {
       .el-radio__inner {
         background-color: $--radio-disabled-input-fill;
-        border-color: $--radio-disabled-input-border-color;
+        //border-color: $--radio-disabled-input-border-color;
         cursor: not-allowed;
 
         &::after {
@@ -111,7 +116,7 @@
       &.is-checked {
         .el-radio__inner {
           background-color: $--radio-disabled-checked-input-fill;
-          border-color: $--radio-disabled-checked-input-border-color;
+          //border-color: $--radio-disabled-checked-input-border-color;
 
           &::after {
             background-color: $--radio-disabled-checked-icon-color;
@@ -127,7 +132,7 @@
     @include when(checked) {
       .el-radio__inner {
         background-color: $--radio-checked-input-background-color;
-        border: solid 1px $--radio-checked-input-background-color;
+        //border: solid 1px $--radio-checked-input-background-color;
         box-shadow: 0 1px 1px rgba(0,0,0,.1);
         text-align: center;
         background-clip: padding-box;
@@ -155,7 +160,7 @@
 
     @include when(focus) {
       .el-radio__inner {
-        border-color: $--radio-input-border-color-hover;
+        //border-color: $--radio-input-border-color-hover;
       }
     }
   }
@@ -165,17 +170,14 @@
     width: $--radio-input-width;
     height: $--radio-input-height;
     background-color: $--radio-input-background-color;
-    //position: relative;
+    position: relative;
     cursor: pointer;
     display: inline-block;
     box-sizing: border-box;
 
     &:hover {
-      border-color: $--radio-input-border-color-hover;
+      //border-color: $--radio-input-border-color-hover;
     }
-
-    position: fixed;
-    right: 40px;
   }
 
   @include e(original) {
@@ -198,6 +200,6 @@
 
   @include e(label) {
     font-size: $--radio-font-size;
-    padding-left: 10px;
+    padding-left: 2px;
   }
 }

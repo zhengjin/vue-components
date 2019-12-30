@@ -43,7 +43,6 @@ import Tree from '../packages/tree/index.js';
 import Alert from '../packages/alert/index.js';
 import Notification from '../packages/notification/index.js';
 import Slider from '../packages/slider/index.js';
-import Loading from '../packages/loading/index.js';
 import Icon from '../packages/icon/index.js';
 import Row from '../packages/row/index.js';
 import Col from '../packages/col/index.js';
@@ -82,7 +81,7 @@ import CascaderPanel from '../packages/cascader-panel/index.js';
 import Avatar from '../packages/avatar/index.js';
 import Drawer from '../packages/drawer/index.js';
 import Popconfirm from '../packages/popconfirm/index.js';
-import locale from 'oversea-vue/src/locale';
+// import locale from 'oversea-vue/src/locale';
 import CollapseTransition from 'oversea-vue/src/transitions/collapse-transition';
 
 const components = [

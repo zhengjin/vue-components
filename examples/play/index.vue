@@ -8,19 +8,26 @@
         <el-input type="password" v-model="ruleForm.checkPass" clearable placeholder="请输入内容"></el-input>
       </el-form-item>
       <div>
-        <div><el-radio v-model="radio" label="1" border style="width: 100%">Split equally</el-radio></div>
-        <div><el-radio v-model="radio" label="2" border style="width: 100%">Split individually</el-radio></div>
+        <el-card shadow="always" style="margin-bottom: 8px">
+          <el-radio border size="medium" v-model="radio" label="1" style="width: 100%">Split equally</el-radio>
+        </el-card>
+        <el-card shadow="always">
+          <el-radio border size="medium" v-model="radio" label="2" style="width: 100%">Split individually</el-radio>
+        </el-card>
       </div>
 
-      <div>
+      <div style="margin: 20px 0">
         <el-checkbox v-model="checked1">备选项1</el-checkbox>
       </div>
+
+      <div style="margin: 20px 0">
+        <el-radio border size="small" v-model="radio" label="1" style="width: 100%">Paid</el-radio>
+      </div>
+
       <el-form-item label="年龄" prop="age">
-        <el-input v-model.number="ruleForm.age"></el-input>
+        <el-input v-model.number="ruleForm.age" placeholder="数字键盘" type="number" pattern="[0-9]*" inputmode="decimal" step="0.01" clearable></el-input>
       </el-form-item>
-      <el-form-item label="数字键盘" prop="age">
-        <el-input v-model.number="ruleForm.age"></el-input>
-      </el-form-item>
+
       <div>
         <el-button @click="submitForm('ruleForm')" type="danger" style="width: 100%" size="large" round :disabled="false">提交</el-button>
       </div>
@@ -28,8 +35,6 @@
         <el-button @click="resetForm('ruleForm')" type="danger" style="width: 100%" size="large" round :disabled="false">重置</el-button>
       </div>
     </el-form>
-    <el-input v-model="input" type="number" pattern="[0-9]*" inputmode="decimal" placeholder="" step="0.01" clearable></el-input>
-    <br/><br/>
   </div>
 </template>
 

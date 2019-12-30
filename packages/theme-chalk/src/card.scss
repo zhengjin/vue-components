@@ -10,13 +10,13 @@
   transition: 0.3s;
 
   @include when(always-shadow) {
-    box-shadow: $--box-shadow-light;
+    box-shadow: $--box-shadow-light-1;
   }
 
   @include when(hover-shadow) {
     &:hover,
     &:focus {
-      box-shadow: $--box-shadow-light;
+      box-shadow: $--box-shadow-light-1;
     }
   }
 
@@ -27,6 +27,6 @@
   }
 
   @include e(body) {
-    padding: $--card-padding;
+    padding: $--card-padding-light;
   }
 }
