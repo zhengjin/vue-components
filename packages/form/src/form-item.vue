@@ -31,6 +31,7 @@
                 : (elForm && elForm.inlineMessage || false)
             }"
           >
+            <i :class="`el-icon-error`"></i>
             {{validateMessage}}
           </div>
         </slot>

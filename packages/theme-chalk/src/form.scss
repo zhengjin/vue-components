@@ -97,8 +97,9 @@
     vertical-align: middle;
     float: left;
     font-size: $--form-label-font-size;
-    color: $--color-text-regular;
-    line-height: 40px;
+    color: $--color-text-label;
+    line-height: 20px;
+    //line-height: 40px;
     padding: 0 12px 0 0;
     box-sizing: border-box;
   }
@@ -155,7 +156,8 @@
       }
     }
     .el-input__validateIcon {
-      color: $--color-danger;
+      //color: $--color-danger;
+      display: none;
     }
   }
 

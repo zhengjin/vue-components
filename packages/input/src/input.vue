@@ -60,7 +60,7 @@
             </i>
           </template>
           <i v-if="showClear"
-            class="el-input__icon el-icon-circle-close el-input__clear"
+            class="el-input__icon el-icon-error el-input__clear"
             @mousedown.prevent
             @click="clear"
           ></i>
@@ -206,7 +206,7 @@
       validateIcon() {
         return {
           validating: 'el-icon-loading',
-          success: 'el-icon-circle-check',
+          success: 'el-icon-success',
           error: 'el-icon-circle-close'
         }[this.validateState];
       },

@@ -18,6 +18,9 @@
       <el-form-item label="年龄" prop="age">
         <el-input v-model.number="ruleForm.age"></el-input>
       </el-form-item>
+      <el-form-item label="数字键盘" prop="age">
+        <el-input v-model.number="ruleForm.age"></el-input>
+      </el-form-item>
       <div>
         <el-button @click="submitForm('ruleForm')" type="danger" style="width: 100%" size="large" round :disabled="false">提交</el-button>
       </div>
@@ -25,7 +28,7 @@
         <el-button @click="resetForm('ruleForm')" type="danger" style="width: 100%" size="large" round :disabled="false">重置</el-button>
       </div>
     </el-form>
-    <el-input v-model="input" clearable placeholder="请输入内容"></el-input>
+    <el-input v-model="input" type="number" pattern="[0-9]*" inputmode="decimal" placeholder="" step="0.01" clearable></el-input>
     <br/><br/>
   </div>
 </template>
