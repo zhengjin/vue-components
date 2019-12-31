@@ -213,12 +213,12 @@
 </template>
 
 <script type="text/babel">
-  import ElCheckbox from 'oversea-vue/packages/checkbox';
+  import ElCheckbox from 'overseas-vue/packages/checkbox';
   import { debounce, throttle } from 'throttle-debounce';
-  import { addResizeListener, removeResizeListener } from 'oversea-vue/src/utils/resize-event';
-  import Mousewheel from 'oversea-vue/src/directives/mousewheel';
-  import Locale from 'oversea-vue/src/mixins/locale';
-  import Migrating from 'oversea-vue/src/mixins/migrating';
+  import { addResizeListener, removeResizeListener } from 'overseas-vue/src/utils/resize-event';
+  import Mousewheel from 'overseas-vue/src/directives/mousewheel';
+  import Locale from 'overseas-vue/src/mixins/locale';
+  import Migrating from 'overseas-vue/src/mixins/migrating';
   import { createStore, mapStates } from './store/helper';
   import TableLayout from './table-layout';
   import TableBody from './table-body';

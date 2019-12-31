@@ -22,10 +22,10 @@
   </span>
 </template>
 <script>
-import Popper from 'oversea-vue/src/utils/vue-popper';
-import { on, off } from 'oversea-vue/src/utils/dom';
-import { addClass, removeClass } from 'oversea-vue/src/utils/dom';
-import { generateId } from 'oversea-vue/src/utils/util';
+import Popper from 'overseas-vue/src/utils/vue-popper';
+import { on, off } from 'overseas-vue/src/utils/dom';
+import { addClass, removeClass } from 'overseas-vue/src/utils/dom';
+import { generateId } from 'overseas-vue/src/utils/util';
 
 export default {
   name: 'ElPopover',

@@ -52,10 +52,10 @@
 </template>
 
 <script>
-  import ElCheckboxGroup from 'oversea-vue/packages/checkbox-group';
-  import ElCheckbox from 'oversea-vue/packages/checkbox';
-  import ElInput from 'oversea-vue/packages/input';
-  import Locale from 'oversea-vue/src/mixins/locale';
+  import ElCheckboxGroup from 'overseas-vue/packages/checkbox-group';
+  import ElCheckbox from 'overseas-vue/packages/checkbox';
+  import ElInput from 'overseas-vue/packages/input';
+  import Locale from 'overseas-vue/src/mixins/locale';
 
   export default {
     mixins: [Locale],

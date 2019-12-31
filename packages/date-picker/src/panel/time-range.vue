@@ -62,8 +62,8 @@
     modifyDate,
     clearMilliseconds,
     timeWithinRange
-  } from 'oversea-vue/src/utils/date-util';
-  import Locale from 'oversea-vue/src/mixins/locale';
+  } from 'overseas-vue/src/utils/date-util';
+  import Locale from 'overseas-vue/src/mixins/locale';
   import TimeSpinner from '../basic/time-spinner';
 
   const MIN_TIME = parseDate('00:00:00', 'HH:mm:ss');

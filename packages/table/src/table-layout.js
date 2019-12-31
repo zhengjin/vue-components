@@ -1,5 +1,5 @@
 import Vue from 'vue';
-import scrollbarWidth from 'oversea-vue/src/utils/scrollbar-width';
+import scrollbarWidth from 'overseas-vue/src/utils/scrollbar-width';
 import { parseHeight } from './util';
 
 class TableLayout {

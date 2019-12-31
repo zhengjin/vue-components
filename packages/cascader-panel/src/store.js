@@ -1,5 +1,5 @@
 import Node from './node';
-import { coerceTruthyValueToArray, valueEquals } from 'oversea-vue/src/utils/util';
+import { coerceTruthyValueToArray, valueEquals } from 'overseas-vue/src/utils/util';
 
 const flatNodes = (data, leafOnly) => {
   return data.reduce((res, node) => {

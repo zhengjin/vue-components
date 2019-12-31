@@ -31,8 +31,8 @@
 </template>
 
 <script type="text/babel">
-  import { limitTimeRange, isDate, clearMilliseconds, timeWithinRange } from 'oversea-vue/src/utils/date-util';
-  import Locale from 'oversea-vue/src/mixins/locale';
+  import { limitTimeRange, isDate, clearMilliseconds, timeWithinRange } from 'overseas-vue/src/utils/date-util';
+  import Locale from 'overseas-vue/src/mixins/locale';
   import TimeSpinner from '../basic/time-spinner';
 
   export default {

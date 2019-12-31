@@ -1,5 +1,5 @@
-import { isEqual, capitalize } from 'oversea-vue/src/utils/util';
-import { isDef } from 'oversea-vue/src/utils/shared';
+import { isEqual, capitalize } from 'overseas-vue/src/utils/util';
+import { isDef } from 'overseas-vue/src/utils/shared';
 
 let uid = 0;
 

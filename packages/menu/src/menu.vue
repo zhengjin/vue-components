@@ -1,8 +1,8 @@
 <script type="text/jsx">
-  import emitter from 'oversea-vue/src/mixins/emitter';
-  import Migrating from 'oversea-vue/src/mixins/migrating';
-  import Menubar from 'oversea-vue/src/utils/menu/aria-menubar';
-  import { addClass, removeClass, hasClass } from 'oversea-vue/src/utils/dom';
+  import emitter from 'overseas-vue/src/mixins/emitter';
+  import Migrating from 'overseas-vue/src/mixins/migrating';
+  import Menubar from 'overseas-vue/src/utils/menu/aria-menubar';
+  import { addClass, removeClass, hasClass } from 'overseas-vue/src/utils/dom';
 
   export default {
     name: 'ElMenu',

@@ -10,8 +10,8 @@ SUB_FOLDER='2.13'
 mkdir -p $SUB_FOLDER
 rm -rf *.js *.css *.map static
 rm -rf $SUB_FOLDER/**
-cp -rf ../../examples/oversea-vue/** .
-cp -rf ../../examples/oversea-vue/** $SUB_FOLDER/
+cp -rf ../../examples/overseas-vue/** .
+cp -rf ../../examples/overseas-vue/** $SUB_FOLDER/
 cd ../..
 
 # deploy domestic site

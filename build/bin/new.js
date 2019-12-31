@@ -112,8 +112,8 @@ fileSave(sassPath)
   .write(sassImportText, 'utf8')
   .end('\n');
 
-// 添加到 oversea-vue.d.ts
-const elementTsPath = path.join(__dirname, '../../types/oversea-vue.d.ts');
+// 添加到 overseas-vue.d.ts
+const elementTsPath = path.join(__dirname, '../../types/overseas-vue.d.ts');
 
 let elementTsText = `${fs.readFileSync(elementTsPath)}
 /** ${ComponentName} Component */

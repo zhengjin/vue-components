@@ -87,11 +87,11 @@ export interface InstallationOptions {
   size: string
 }
 
-/** The version of oversea-vue */
+/** The version of overseas-vue */
 export const version: string
 
 /**
- * Install all oversea-vue components into Vue.
+ * Install all overseas-vue components into Vue.
  * Please do not invoke this method directly.
  * Call `Vue.use(ElementUI)` to install.
  */

@@ -13,10 +13,10 @@
 </template>
 
 <script type="text/babel">
-  import Locale from 'oversea-vue/src/mixins/locale';
-  import { isDate, range, getDayCountOfMonth, nextDate } from 'oversea-vue/src/utils/date-util';
-  import { hasClass } from 'oversea-vue/src/utils/dom';
-  import { arrayFindIndex, coerceTruthyValueToArray, arrayFind } from 'oversea-vue/src/utils/util';
+  import Locale from 'overseas-vue/src/mixins/locale';
+  import { isDate, range, getDayCountOfMonth, nextDate } from 'overseas-vue/src/utils/date-util';
+  import { hasClass } from 'overseas-vue/src/utils/dom';
+  import { arrayFindIndex, coerceTruthyValueToArray, arrayFind } from 'overseas-vue/src/utils/util';
 
   const datesInMonth = (year, month) => {
     const numOfDays = getDayCountOfMonth(year, month);

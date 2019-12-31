@@ -1,8 +1,8 @@
-import { arrayFindIndex } from 'oversea-vue/src/utils/util';
+import { arrayFindIndex } from 'overseas-vue/src/utils/util';
 import { getCell, getColumnByCell, getRowIdentity } from './util';
-import { getStyle, hasClass, removeClass, addClass } from 'oversea-vue/src/utils/dom';
-import ElCheckbox from 'oversea-vue/packages/checkbox';
-import ElTooltip from 'oversea-vue/packages/tooltip';
+import { getStyle, hasClass, removeClass, addClass } from 'overseas-vue/src/utils/dom';
+import ElCheckbox from 'overseas-vue/packages/checkbox';
+import ElTooltip from 'overseas-vue/packages/tooltip';
 import debounce from 'throttle-debounce/debounce';
 import LayoutObserver from './layout-observer';
 import { mapStates } from './store/helper';

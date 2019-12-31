@@ -1,6 +1,6 @@
-import objectAssign from 'oversea-vue/src/utils/merge';
+import objectAssign from 'overseas-vue/src/utils/merge';
 import { markNodeData, NODE_KEY } from './util';
-import { arrayFindIndex } from 'oversea-vue/src/utils/util';
+import { arrayFindIndex } from 'overseas-vue/src/utils/util';
 
 export const getChildState = node => {
   let all = true;

@@ -10,7 +10,7 @@
 </template>
 
 <script type="text/babel">
-  import Emitter from 'oversea-vue/src/mixins/emitter';
+  import Emitter from 'overseas-vue/src/mixins/emitter';
 
   export default {
     mixins: [Emitter],

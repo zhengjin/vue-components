@@ -36,9 +36,9 @@
   </div>
 </template>
 <script>
-  import emitter from 'oversea-vue/src/mixins/emitter';
-  import Focus from 'oversea-vue/src/mixins/focus';
-  import Migrating from 'oversea-vue/src/mixins/migrating';
+  import emitter from 'overseas-vue/src/mixins/emitter';
+  import Focus from 'overseas-vue/src/mixins/focus';
+  import Migrating from 'overseas-vue/src/mixins/migrating';
 
   export default {
     name: 'ElSwitch',

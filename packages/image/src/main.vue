@@ -23,9 +23,9 @@
 
 <script>
   import ImageViewer from './image-viewer';
-  import Locale from 'oversea-vue/src/mixins/locale';
-  import { on, off, getScrollContainer, isInContainer } from 'oversea-vue/src/utils/dom';
-  import { isString, isHtmlElement } from 'oversea-vue/src/utils/types';
+  import Locale from 'overseas-vue/src/mixins/locale';
+  import { on, off, getScrollContainer, isInContainer } from 'overseas-vue/src/utils/dom';
+  import { isString, isHtmlElement } from 'overseas-vue/src/utils/types';
   import throttle from 'throttle-debounce/throttle';
 
   const isSupportObjectFit = () => document.documentElement.style.objectFit !== undefined;

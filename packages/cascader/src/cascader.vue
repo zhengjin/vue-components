@@ -112,21 +112,21 @@
 </template>
 
 <script>
-import Popper from 'oversea-vue/src/utils/vue-popper';
-import Clickoutside from 'oversea-vue/src/utils/clickoutside';
-import Emitter from 'oversea-vue/src/mixins/emitter';
-import Locale from 'oversea-vue/src/mixins/locale';
-import Migrating from 'oversea-vue/src/mixins/migrating';
-import ElInput from 'oversea-vue/packages/input';
-import ElTag from 'oversea-vue/packages/tag';
-import ElScrollbar from 'oversea-vue/packages/scrollbar';
-import ElCascaderPanel from 'oversea-vue/packages/cascader-panel';
-import AriaUtils from 'oversea-vue/src/utils/aria-utils';
-import { t } from 'oversea-vue/src/locale';
-import { isEqual, isEmpty, kebabCase } from 'oversea-vue/src/utils/util';
-import { isUndefined, isFunction } from 'oversea-vue/src/utils/types';
-import { isDef } from 'oversea-vue/src/utils/shared';
-import { addResizeListener, removeResizeListener } from 'oversea-vue/src/utils/resize-event';
+import Popper from 'overseas-vue/src/utils/vue-popper';
+import Clickoutside from 'overseas-vue/src/utils/clickoutside';
+import Emitter from 'overseas-vue/src/mixins/emitter';
+import Locale from 'overseas-vue/src/mixins/locale';
+import Migrating from 'overseas-vue/src/mixins/migrating';
+import ElInput from 'overseas-vue/packages/input';
+import ElTag from 'overseas-vue/packages/tag';
+import ElScrollbar from 'overseas-vue/packages/scrollbar';
+import ElCascaderPanel from 'overseas-vue/packages/cascader-panel';
+import AriaUtils from 'overseas-vue/src/utils/aria-utils';
+import { t } from 'overseas-vue/src/locale';
+import { isEqual, isEmpty, kebabCase } from 'overseas-vue/src/utils/util';
+import { isUndefined, isFunction } from 'overseas-vue/src/utils/types';
+import { isDef } from 'overseas-vue/src/utils/shared';
+import { addResizeListener, removeResizeListener } from 'overseas-vue/src/utils/resize-event';
 import debounce from 'throttle-debounce/debounce';
 
 const { keys: KeyCode } = AriaUtils;

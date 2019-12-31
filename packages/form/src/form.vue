@@ -7,7 +7,7 @@
   </form>
 </template>
 <script>
-  import objectAssign from 'oversea-vue/src/utils/merge';
+  import objectAssign from 'overseas-vue/src/utils/merge';
 
   export default {
     name: 'ElForm',

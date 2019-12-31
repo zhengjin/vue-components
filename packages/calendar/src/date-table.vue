@@ -1,6 +1,6 @@
 <script>
-import fecha from 'oversea-vue/src/utils/date';
-import { range as rangeArr, getFirstDayOfMonth, getPrevMonthLastDays, getMonthDays, getI18nSettings, validateRangeInOneMonth } from 'oversea-vue/src/utils/date-util';
+import fecha from 'overseas-vue/src/utils/date';
+import { range as rangeArr, getFirstDayOfMonth, getPrevMonthLastDays, getMonthDays, getI18nSettings, validateRangeInOneMonth } from 'overseas-vue/src/utils/date-util';
 
 export default {
   props: {

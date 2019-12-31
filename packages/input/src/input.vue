@@ -109,11 +109,11 @@
   </div>
 </template>
 <script>
-  import emitter from 'oversea-vue/src/mixins/emitter';
-  import Migrating from 'oversea-vue/src/mixins/migrating';
+  import emitter from 'overseas-vue/src/mixins/emitter';
+  import Migrating from 'overseas-vue/src/mixins/migrating';
   import calcTextareaHeight from './calcTextareaHeight';
-  import merge from 'oversea-vue/src/utils/merge';
-  import {isKorean} from 'oversea-vue/src/utils/shared';
+  import merge from 'overseas-vue/src/utils/merge';
+  import {isKorean} from 'overseas-vue/src/utils/shared';
 
   export default {
     name: 'ElInput',

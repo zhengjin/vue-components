@@ -1,10 +1,10 @@
 <script>
-  import Clickoutside from 'oversea-vue/src/utils/clickoutside';
-  import Emitter from 'oversea-vue/src/mixins/emitter';
-  import Migrating from 'oversea-vue/src/mixins/migrating';
-  import ElButton from 'oversea-vue/packages/button';
-  import ElButtonGroup from 'oversea-vue/packages/button-group';
-  import { generateId } from 'oversea-vue/src/utils/util';
+  import Clickoutside from 'overseas-vue/src/utils/clickoutside';
+  import Emitter from 'overseas-vue/src/mixins/emitter';
+  import Migrating from 'overseas-vue/src/mixins/migrating';
+  import ElButton from 'overseas-vue/packages/button';
+  import ElButtonGroup from 'overseas-vue/packages/button-group';
+  import { generateId } from 'overseas-vue/src/utils/util';
 
   export default {
     name: 'ElDropdown',

@@ -72,9 +72,9 @@
 </template>
 
 <script type="text/jsx">
-  import ElCollapseTransition from 'oversea-vue/src/transitions/collapse-transition';
-  import ElCheckbox from 'oversea-vue/packages/checkbox';
-  import emitter from 'oversea-vue/src/mixins/emitter';
+  import ElCollapseTransition from 'overseas-vue/src/transitions/collapse-transition';
+  import ElCheckbox from 'overseas-vue/packages/checkbox';
+  import emitter from 'overseas-vue/src/mixins/emitter';
   import { getNodeKey } from './model/util';
 
   export default {

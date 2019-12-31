@@ -1,9 +1,9 @@
-import { kebabCase } from 'oversea-vue/src/utils/util';
+import { kebabCase } from 'overseas-vue/src/utils/util';
 /**
  * Show migrating guide in browser console.
  *
  * Usage:
- * import Migrating from 'oversea-vue/src/mixins/migrating';
+ * import Migrating from 'overseas-vue/src/mixins/migrating';
  *
  * mixins: [Migrating]
  *

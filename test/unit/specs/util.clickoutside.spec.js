@@ -1,4 +1,4 @@
-import Clickoutside from 'oversea-vue/src/utils/clickoutside';
+import Clickoutside from 'overseas-vue/src/utils/clickoutside';
 const ctx = '@@clickoutsideContext';
 
 import { triggerEvent, triggerClick } from '../util';

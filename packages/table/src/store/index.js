@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import Watcher from './watcher';
-import { arrayFind } from 'oversea-vue/src/utils/util';
+import { arrayFind } from 'overseas-vue/src/utils/util';
 
 Watcher.prototype.mutations = {
   setData(states, data) {

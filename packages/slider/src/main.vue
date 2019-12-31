@@ -74,10 +74,10 @@
 </template>
 
 <script type="text/babel">
-  import ElInputNumber from 'oversea-vue/packages/input-number';
+  import ElInputNumber from 'overseas-vue/packages/input-number';
   import SliderButton from './button.vue';
   import SliderMarker from './marker';
-  import Emitter from 'oversea-vue/src/mixins/emitter';
+  import Emitter from 'overseas-vue/src/mixins/emitter';
 
   export default {
     name: 'ElSlider',

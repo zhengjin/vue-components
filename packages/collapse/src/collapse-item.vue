@@ -45,9 +45,9 @@
   </div>
 </template>
 <script>
-  import ElCollapseTransition from 'oversea-vue/src/transitions/collapse-transition';
-  import Emitter from 'oversea-vue/src/mixins/emitter';
-  import { generateId } from 'oversea-vue/src/utils/util';
+  import ElCollapseTransition from 'overseas-vue/src/transitions/collapse-transition';
+  import Emitter from 'overseas-vue/src/mixins/emitter';
+  import { generateId } from 'overseas-vue/src/utils/util';
 
   export default {
     name: 'ElCollapseItem',

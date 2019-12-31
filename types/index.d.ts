@@ -1,4 +1,4 @@
-export * from './oversea-vue'
+export * from './overseas-vue'
 
-import * as ElementUI from './oversea-vue'
+import * as ElementUI from './overseas-vue'
 export default ElementUI

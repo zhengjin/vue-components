@@ -1,4 +1,4 @@
-import { addClass, removeClass } from 'oversea-vue/src/utils/dom';
+import { addClass, removeClass } from 'overseas-vue/src/utils/dom';
 
 class Transition {
   beforeEnter(el) {

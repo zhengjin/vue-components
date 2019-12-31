@@ -6,7 +6,7 @@
   </transition>
 </template>
 <script>
-  import Popper from 'oversea-vue/src/utils/vue-popper';
+  import Popper from 'overseas-vue/src/utils/vue-popper';
 
   export default {
     name: 'ElDropdownMenu',

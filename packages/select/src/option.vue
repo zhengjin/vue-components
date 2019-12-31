@@ -16,8 +16,8 @@
 </template>
 
 <script type="text/babel">
-  import Emitter from 'oversea-vue/src/mixins/emitter';
-  import { getValueByPath, escapeRegexpString } from 'oversea-vue/src/utils/util';
+  import Emitter from 'overseas-vue/src/mixins/emitter';
+  import { getValueByPath, escapeRegexpString } from 'overseas-vue/src/utils/util';
 
   export default {
     mixins: [Emitter],

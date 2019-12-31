@@ -1,7 +1,7 @@
 <script>
-  import ElCheckbox from 'oversea-vue/packages/checkbox';
-  import ElRadio from 'oversea-vue/packages/radio';
-  import { isEqual } from 'oversea-vue/src/utils/util';
+  import ElCheckbox from 'overseas-vue/packages/checkbox';
+  import ElRadio from 'overseas-vue/packages/radio';
+  import { isEqual } from 'overseas-vue/src/utils/util';
 
   const stopPropagation = e => e.stopPropagation();
 

@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import Migrating from 'oversea-vue/src/mixins/migrating';
+import Migrating from 'overseas-vue/src/mixins/migrating';
 
 export default {
   name: 'ElSteps',

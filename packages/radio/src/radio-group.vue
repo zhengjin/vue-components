@@ -9,7 +9,7 @@
   </component>
 </template>
 <script>
-  import Emitter from 'oversea-vue/src/mixins/emitter';
+  import Emitter from 'overseas-vue/src/mixins/emitter';
 
   const keyCode = Object.freeze({
     LEFT: 37,

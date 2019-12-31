@@ -44,9 +44,9 @@
 </template>
 
 <script type="text/babel">
-  import { hasClass } from 'oversea-vue/src/utils/dom';
-  import { isDate, range, nextDate, getDayCountOfYear } from 'oversea-vue/src/utils/date-util';
-  import { arrayFindIndex, coerceTruthyValueToArray } from 'oversea-vue/src/utils/util';
+  import { hasClass } from 'overseas-vue/src/utils/dom';
+  import { isDate, range, nextDate, getDayCountOfYear } from 'overseas-vue/src/utils/date-util';
+  import { arrayFindIndex, coerceTruthyValueToArray } from 'overseas-vue/src/utils/util';
 
   const datesInYear = year => {
     const numOfDays = getDayCountOfYear(year);

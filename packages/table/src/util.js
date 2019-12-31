@@ -1,4 +1,4 @@
-import { getValueByPath } from 'oversea-vue/src/utils/util';
+import { getValueByPath } from 'overseas-vue/src/utils/util';
 
 export const getCell = function(event) {
   let cell = event.target;

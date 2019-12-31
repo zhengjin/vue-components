@@ -4,10 +4,10 @@ import {
   isFunction,
   isUndefined,
   isDefined
-} from 'oversea-vue/src/utils/types';
+} from 'overseas-vue/src/utils/types';
 import {
   getScrollContainer
-} from 'oversea-vue/src/utils/dom';
+} from 'overseas-vue/src/utils/dom';
 
 const getStyleComputedProperty = (element, property) => {
   if (element === window) {

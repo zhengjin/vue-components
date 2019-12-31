@@ -43,10 +43,10 @@
   import HueSlider from './hue-slider';
   import AlphaSlider from './alpha-slider';
   import Predefine from './predefine';
-  import Popper from 'oversea-vue/src/utils/vue-popper';
-  import Locale from 'oversea-vue/src/mixins/locale';
-  import ElInput from 'oversea-vue/packages/input';
-  import ElButton from 'oversea-vue/packages/button';
+  import Popper from 'overseas-vue/src/utils/vue-popper';
+  import Locale from 'overseas-vue/src/mixins/locale';
+  import ElInput from 'overseas-vue/packages/input';
+  import ElButton from 'overseas-vue/packages/button';
 
   export default {
     name: 'el-color-picker-dropdown',

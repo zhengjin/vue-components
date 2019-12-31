@@ -1,6 +1,6 @@
 import Vue from 'vue';
-import { hasClass, addClass, removeClass } from 'oversea-vue/src/utils/dom';
-import ElCheckbox from 'oversea-vue/packages/checkbox';
+import { hasClass, addClass, removeClass } from 'overseas-vue/src/utils/dom';
+import ElCheckbox from 'overseas-vue/packages/checkbox';
 import FilterPanel from './filter-panel.vue';
 import LayoutObserver from './layout-observer';
 import { mapStates } from './store/helper';

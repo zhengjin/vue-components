@@ -1,4 +1,4 @@
-import { hasOwn } from 'oversea-vue/src/utils/util';
+import { hasOwn } from 'overseas-vue/src/utils/util';
 
 const RE_NARGS = /(%|)\{([0-9a-zA-Z_]+)\}/g;
 /**

@@ -1,5 +1,5 @@
-import fecha from 'oversea-vue/src/utils/date';
-import { t } from 'oversea-vue/src/locale';
+import fecha from 'overseas-vue/src/utils/date';
+import { t } from 'overseas-vue/src/locale';
 
 const weeks = ['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat'];
 const months = ['jan', 'feb', 'mar', 'apr', 'may', 'jun', 'jul', 'aug', 'sep', 'oct', 'nov', 'dec'];

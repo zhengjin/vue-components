@@ -1,4 +1,4 @@
-import { once, on } from 'oversea-vue/src/utils/dom';
+import { once, on } from 'overseas-vue/src/utils/dom';
 
 export default {
   bind(el, binding, vnode) {

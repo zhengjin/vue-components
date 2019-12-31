@@ -1,7 +1,7 @@
-import Popper from 'oversea-vue/src/utils/vue-popper';
+import Popper from 'overseas-vue/src/utils/vue-popper';
 import debounce from 'throttle-debounce/debounce';
-import { addClass, removeClass, on, off } from 'oversea-vue/src/utils/dom';
-import { generateId } from 'oversea-vue/src/utils/util';
+import { addClass, removeClass, on, off } from 'overseas-vue/src/utils/dom';
+import { generateId } from 'overseas-vue/src/utils/util';
 import Vue from 'vue';
 
 export default {

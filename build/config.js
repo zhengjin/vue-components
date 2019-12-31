@@ -9,21 +9,21 @@ var transitionList = fs.readdirSync(path.resolve(__dirname, '../src/transitions'
 var externals = {};
 
 Object.keys(Components).forEach(function(key) {
-  externals[`oversea-vue/packages/${key}`] = `oversea-vue/lib/${key}`;
+  externals[`overseas-vue/packages/${key}`] = `overseas-vue/lib/${key}`;
 });
 
-externals['oversea-vue/src/locale'] = 'oversea-vue/lib/locale';
+externals['overseas-vue/src/locale'] = 'overseas-vue/lib/locale';
 utilsList.forEach(function(file) {
   file = path.basename(file, '.js');
-  externals[`oversea-vue/src/utils/${file}`] = `oversea-vue/lib/utils/${file}`;
+  externals[`overseas-vue/src/utils/${file}`] = `overseas-vue/lib/utils/${file}`;
 });
 mixinsList.forEach(function(file) {
   file = path.basename(file, '.js');
-  externals[`oversea-vue/src/mixins/${file}`] = `oversea-vue/lib/mixins/${file}`;
+  externals[`overseas-vue/src/mixins/${file}`] = `overseas-vue/lib/mixins/${file}`;
 });
 transitionList.forEach(function(file) {
   file = path.basename(file, '.js');
-  externals[`oversea-vue/src/transitions/${file}`] = `oversea-vue/lib/transitions/${file}`;
+  externals[`overseas-vue/src/transitions/${file}`] = `overseas-vue/lib/transitions/${file}`;
 });
 
 externals = [Object.assign({
@@ -36,7 +36,7 @@ exports.alias = {
   main: path.resolve(__dirname, '../src'),
   packages: path.resolve(__dirname, '../packages'),
   examples: path.resolve(__dirname, '../examples'),
-  'oversea-vue': path.resolve(__dirname, '../')
+  'overseas-vue': path.resolve(__dirname, '../')
 };
 
 exports.vue = {

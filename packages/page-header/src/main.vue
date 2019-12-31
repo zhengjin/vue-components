@@ -13,7 +13,7 @@
 </template>
 
 <script>
-import { t } from 'oversea-vue/src/locale';
+import { t } from 'overseas-vue/src/locale';
 export default {
   name: 'ElPageHeader',
 

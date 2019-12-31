@@ -28,7 +28,7 @@
 </template>
 
 <script>
-  import ElTooltip from 'oversea-vue/packages/tooltip';
+  import ElTooltip from 'overseas-vue/packages/tooltip';
 
   export default {
     name: 'ElSliderButton',

@@ -101,9 +101,9 @@
 </template>
 
 <script type="text/babel">
-  import { getRangeHours, getRangeMinutes, modifyTime } from 'oversea-vue/src/utils/date-util';
-  import ElScrollbar from 'oversea-vue/packages/scrollbar';
-  import RepeatClick from 'oversea-vue/src/directives/repeat-click';
+  import { getRangeHours, getRangeMinutes, modifyTime } from 'overseas-vue/src/utils/date-util';
+  import ElScrollbar from 'overseas-vue/packages/scrollbar';
+  import RepeatClick from 'overseas-vue/src/directives/repeat-click';
 
   export default {
     components: { ElScrollbar },

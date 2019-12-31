@@ -84,12 +84,12 @@
     prevYear,
     nextYear,
     nextMonth
-  } from 'oversea-vue/src/utils/date-util';
-  import Clickoutside from 'oversea-vue/src/utils/clickoutside';
-  import Locale from 'oversea-vue/src/mixins/locale';
+  } from 'overseas-vue/src/utils/date-util';
+  import Clickoutside from 'overseas-vue/src/utils/clickoutside';
+  import Locale from 'overseas-vue/src/mixins/locale';
   import MonthTable from '../basic/month-table';
-  import ElInput from 'oversea-vue/packages/input';
-  import ElButton from 'oversea-vue/packages/button';
+  import ElInput from 'overseas-vue/packages/input';
+  import ElButton from 'overseas-vue/packages/button';
 
   const calcDefaultValue = (defaultValue) => {
     if (Array.isArray(defaultValue)) {

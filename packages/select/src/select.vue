@@ -134,22 +134,22 @@
 </template>
 
 <script type="text/babel">
-  import Emitter from 'oversea-vue/src/mixins/emitter';
-  import Focus from 'oversea-vue/src/mixins/focus';
-  import Locale from 'oversea-vue/src/mixins/locale';
-  import ElInput from 'oversea-vue/packages/input';
+  import Emitter from 'overseas-vue/src/mixins/emitter';
+  import Focus from 'overseas-vue/src/mixins/focus';
+  import Locale from 'overseas-vue/src/mixins/locale';
+  import ElInput from 'overseas-vue/packages/input';
   import ElSelectMenu from './select-dropdown.vue';
   import ElOption from './option.vue';
-  import ElTag from 'oversea-vue/packages/tag';
-  import ElScrollbar from 'oversea-vue/packages/scrollbar';
+  import ElTag from 'overseas-vue/packages/tag';
+  import ElScrollbar from 'overseas-vue/packages/scrollbar';
   import debounce from 'throttle-debounce/debounce';
-  import Clickoutside from 'oversea-vue/src/utils/clickoutside';
-  import { addResizeListener, removeResizeListener } from 'oversea-vue/src/utils/resize-event';
-  import { t } from 'oversea-vue/src/locale';
-  import scrollIntoView from 'oversea-vue/src/utils/scroll-into-view';
-  import { getValueByPath, valueEquals, isIE, isEdge } from 'oversea-vue/src/utils/util';
+  import Clickoutside from 'overseas-vue/src/utils/clickoutside';
+  import { addResizeListener, removeResizeListener } from 'overseas-vue/src/utils/resize-event';
+  import { t } from 'overseas-vue/src/locale';
+  import scrollIntoView from 'overseas-vue/src/utils/scroll-into-view';
+  import { getValueByPath, valueEquals, isIE, isEdge } from 'overseas-vue/src/utils/util';
   import NavigationMixin from './navigation-mixin';
-  import { isKorean } from 'oversea-vue/src/utils/shared';
+  import { isKorean } from 'overseas-vue/src/utils/shared';
 
   export default {
     mixins: [Emitter, Locale, Focus('reference'), NavigationMixin],

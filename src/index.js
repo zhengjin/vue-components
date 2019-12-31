@@ -81,8 +81,8 @@ import CascaderPanel from '../packages/cascader-panel/index.js';
 import Avatar from '../packages/avatar/index.js';
 import Drawer from '../packages/drawer/index.js';
 import Popconfirm from '../packages/popconfirm/index.js';
-// import locale from 'oversea-vue/src/locale';
-import CollapseTransition from 'oversea-vue/src/transitions/collapse-transition';
+// import locale from 'overseas-vue/src/locale';
+import CollapseTransition from 'overseas-vue/src/transitions/collapse-transition';
 
 const components = [
   Pagination,

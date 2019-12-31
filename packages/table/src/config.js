@@ -1,4 +1,4 @@
-import { getPropByPath } from 'oversea-vue/src/utils/util';
+import { getPropByPath } from 'overseas-vue/src/utils/util';
 
 export const cellStarts = {
   default: {

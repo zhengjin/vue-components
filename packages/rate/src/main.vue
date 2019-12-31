@@ -33,9 +33,9 @@
 </template>
 
 <script>
-  import { hasClass } from 'oversea-vue/src/utils/dom';
-  import { isObject } from 'oversea-vue/src/utils/types';
-  import Migrating from 'oversea-vue/src/mixins/migrating';
+  import { hasClass } from 'overseas-vue/src/utils/dom';
+  import { isObject } from 'overseas-vue/src/utils/types';
+  import Migrating from 'overseas-vue/src/mixins/migrating';
 
   export default {
     name: 'ElRate',
