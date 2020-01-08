@@ -1,6 +1,12 @@
 <template>
   <div style="margin: 20px;">
-    <el-form :model="ruleForm" status-icon :rules="rules" ref="ruleForm" class="demo-ruleForm">
+    <el-form :model="ruleForm" status-icon :rules="rules" ref="ruleForm">
+      <el-form-item label="金额" prop="age">
+        <el-input-number v-model="ruleForm.age" clearable placeholder="0.00">
+          <i style="color: #333333" slot="suffix">THB</i>
+        </el-input-number>
+      </el-form-item>
+
       <el-form-item label="密码" prop="pass">
         <el-input v-model="ruleForm.pass" autocomplete="off" clearable placeholder="请输入内容"></el-input>
       </el-form-item>
@@ -25,9 +31,8 @@
       </div>
 
       <el-form-item label="年龄" prop="age">
-        <el-input v-model.number="ruleForm.age" placeholder="数字键盘" type="number" pattern="[0-9]*" inputmode="decimal" step="0.01" clearable></el-input>
+        <el-input v-model.number="ruleForm.age" placeholder="数字键盘" type="number" pattern="[0-9]*" inputmode="decimal" clearable></el-input>
       </el-form-item>
-
       <div>
         <el-button @click="submitForm('ruleForm')" type="danger" style="width: 100%" size="large" round :disabled="false">提交</el-button>
       </div>
@@ -55,7 +60,7 @@
               callback();
             }
           }
-        }, 1000);
+        });
       };
       const validatePass = (rule, value, callback) => {
         if (value === '') {
@@ -81,6 +86,7 @@
         radio: '1',
         checked1: false,
         checked2: true,
+        num: 1,
 
         ruleForm: {
           pass: '',
@@ -113,6 +119,9 @@
       },
       resetForm(formName) {
         this.$refs[formName].resetFields();
+      },
+      handleChange(value) {
+        console.log(value);
       }
     }
   };

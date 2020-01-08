@@ -104,7 +104,8 @@
     box-sizing: border-box;
   }
   @include e(content) {
-    line-height: 40px;
+    //line-height: 40px;
+    line-height: 0;
     position: relative;
     font-size: 14px;
     @include utils-clearfix;

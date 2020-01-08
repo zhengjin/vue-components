@@ -6992,6 +6992,11 @@ output-file-sync@^1.1.2:
     mkdirp "^0.5.1"
     object-assign "^4.1.0"
 
+overseas-numeric-keyboard@0.0.3:
+  version "0.0.3"
+  resolved "https://registry.npm.taobao.org/overseas-numeric-keyboard/download/overseas-numeric-keyboard-0.0.3.tgz#05f92a7e2ee1c41e1069fbb24ff9927de4988868"
+  integrity sha1-Bfkqfi7hxB4QafuyT/mSfeSYiGg=
+
 p-defer@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/p-defer/-/p-defer-1.0.0.tgz#9f6eb182f6c9aa8cd743004a7d4f96b196b0fb0c"

@@ -149,7 +149,7 @@
   @include e(suffix) {
     position: absolute;
     height: 100%;
-    right: 5px;
+    right: -5px;
     top: 0;
     text-align: center;
     color: $--input-icon-color;

@@ -8,51 +8,82 @@
       { 'is-without-controls': !controls },
       { 'is-controls-right': controlsAtRight }
     ]">
-    <span
-      class="el-input-number__decrease"
-      role="button"
-      v-if="controls"
-      v-repeat-click="decrease"
-      :class="{'is-disabled': minDisabled}"
-      @keydown.enter="decrease">
-      <i :class="`el-icon-${controlsAtRight ? 'arrow-down' : 'minus'}`"></i>
+    <NumericInput type="number" :layout="PasswordLayout" :placeholder="placeholder"
+                  v-model="displayValue" entertext="Confirm" format="^(?:\d+(?:\.\d{0,2})?)?$"
+                  @onFocus="updateFocuse" @blur="handleBlur" @input="handleInput" @change="handleInputChange"/>
+    <!-- 后置内容 -->
+    <span :class="`${focused ? 'el-input__suffix' : 'el-input__suffix'}`">
+      <span class="el-input__suffix-inner">
+        <template>
+          <slot name="suffix"></slot>
+          <i class="el-input__icon" v-if="suffixIcon" :class="suffixIcon"></i>
+        </template>
+        <i :style="{visibility: showClear ? 'visible' : 'hidden'}"
+           class="el-input__icon el-icon-error el-input__clear" @mousedown.prevent @click="clear"></i>
+      </span>
     </span>
-    <span
-      class="el-input-number__increase"
-      role="button"
-      v-if="controls"
-      v-repeat-click="increase"
-      :class="{'is-disabled': maxDisabled}"
-      @keydown.enter="increase">
-      <i :class="`el-icon-${controlsAtRight ? 'arrow-up' : 'plus'}`"></i>
-    </span>
-    <el-input
-      ref="input"
-      :value="displayValue"
-      :placeholder="placeholder"
-      :disabled="inputNumberDisabled"
-      :size="inputNumberSize"
-      :max="max"
-      :min="min"
-      :name="name"
-      :label="label"
-      @keydown.up.native.prevent="increase"
-      @keydown.down.native.prevent="decrease"
-      @blur="handleBlur"
-      @focus="handleFocus"
-      @input="handleInput"
-      @change="handleInputChange">
-    </el-input>
+    <i :class="`el-input-border-${focused ? 'focus' : 'none'}`"></i>
   </div>
 </template>
 <script>
-  import ElInput from 'overseas-vue/packages/input';
+  /* eslint-disable no-debugger */
+
+  import emitter from 'overseas-vue/src/mixins/emitter';
   import Focus from 'overseas-vue/src/mixins/focus';
   import RepeatClick from 'overseas-vue/src/directives/repeat-click';
 
+  import { NumericInput, Keys } from 'overseas-numeric-keyboard/dist/numeric_keyboard.vue.js';
+
+  const PasswordLayout = [
+    [
+      {
+        key: Keys.ONE
+      },
+      {
+        key: Keys.TWO
+      },
+      {
+        key: Keys.THREE
+      }
+    ],
+    [
+      {
+        key: Keys.FOUR
+      },
+      {
+        key: Keys.FIVE
+      },
+      {
+        key: Keys.SIX
+      }
+    ],
+    [
+      {
+        key: Keys.SEVEN
+      },
+      {
+        key: Keys.EIGHT
+      },
+      {
+        key: Keys.NINE
+      }
+    ],
+    [
+      {
+        key: Keys.DOT
+      },
+      {
+        key: Keys.ZERO
+      },
+      {
+        key: Keys.DEL
+      }
+    ]
+  ];
+
   export default {
     name: 'ElInputNumber',
-    mixins: [Focus('input')],
+    mixins: [Focus('input'), emitter],
     inject: {
       elForm: {
         default: ''
@@ -65,7 +96,7 @@
       repeatClick: RepeatClick
     },
     components: {
-      ElInput
+      NumericInput
     },
     props: {
       step: {
@@ -84,7 +115,12 @@
         type: Number,
         default: -Infinity
       },
+      clearable: {
+        type: Boolean,
+        default: false
+      },
       value: {},
+      suffixIcon: String,
       disabled: Boolean,
       size: String,
       controls: {
@@ -94,6 +130,10 @@
       controlsPosition: {
         type: String,
         default: ''
+      },
+      validateEvent: {
+        type: Boolean,
+        default: true
       },
       name: String,
       label: String,
@@ -107,8 +147,10 @@
     },
     data() {
       return {
+        PasswordLayout,
         currentValue: 0,
-        userInput: null
+        userInput: null,
+        focused: false
       };
     },
     watch: {
@@ -170,26 +212,52 @@
       inputNumberDisabled() {
         return this.disabled || (this.elForm || {}).disabled;
       },
-      displayValue() {
-        if (this.userInput !== null) {
-          return this.userInput;
-        }
-
-        let currentValue = this.currentValue;
-
-        if (typeof currentValue === 'number') {
-          if (this.stepStrictly) {
-            const stepPrecision = this.getPrecision(this.step);
-            const precisionFactor = Math.pow(10, stepPrecision);
-            currentValue = Math.round(currentValue / this.step) * precisionFactor * this.step / precisionFactor;
+      nativeInputValue() {
+        return this.value === null || this.value === undefined ? '' : Number(this.value);
+      },
+      showClear() {
+        return this.clearable && this.nativeInputValue && this.focused;
+      },
+      validateState() {
+        return this.elFormItem ? this.elFormItem.validateState : '';
+      },
+      validateIcon() {
+        return {
+          validating: 'el-icon-loading',
+          success: 'el-icon-success',
+          error: 'el-icon-circle-close'
+        }[this.validateState];
+      },
+      displayValue: {
+        get: function() {
+          if (this.userInput !== null) {
+            return this.userInput;
           }
 
-          if (this.precision !== undefined) {
-            currentValue = currentValue.toFixed(this.precision);
-          }
-        }
+          let currentValue = this.currentValue;
 
-        return currentValue;
+          if (typeof currentValue === 'number') {
+            if (this.stepStrictly) {
+              const stepPrecision = this.getPrecision(this.step);
+              const precisionFactor = Math.pow(10, stepPrecision);
+              currentValue = Math.round(currentValue / this.step) * precisionFactor * this.step / precisionFactor;
+            }
+
+            if (this.precision !== undefined) {
+              currentValue = currentValue.toFixed(this.precision);
+            }
+          }
+
+          if (currentValue === 0) {
+            return '';
+          } else {
+            return currentValue;
+          }
+        },
+        set: function(newValue) {
+          this.currentValue = newValue;
+          this.$emit('input', this.currentValue);
+        }
       }
     },
     methods: {
@@ -235,10 +303,16 @@
       },
       handleBlur(event) {
         this.$emit('blur', event);
+        if (this.validateEvent) {
+          this.dispatch('ElFormItem', 'el.form.blur', [this.value]);
+        }
+        setTimeout(() => {
+          this.focused = false;
+        }, 100);
       },
-      handleFocus(event) {
-        this.$emit('focus', event);
-      },
+      // handleFocus(event) {
+      //   this.$emit('focus', event);
+      // },
       setCurrentValue(newVal) {
         const oldVal = this.currentValue;
         if (typeof newVal === 'number' && this.precision !== undefined) {
@@ -262,11 +336,19 @@
         }
         this.userInput = null;
       },
-      select() {
-        this.$refs.input.select();
+      clear() {
+        this.$emit('input', '');
+        this.$emit('change', '');
+        this.$emit('clear');
+      },
+      updateFocuse(flag) {
+        setTimeout(() => {
+          this.focused = flag;
+        }, 100);
       }
     },
     mounted() {
+      if (!this.$refs || !this.$refs.input) return;
       let innerInput = this.$refs.input.$refs.input;
       innerInput.setAttribute('role', 'spinbutton');
       innerInput.setAttribute('aria-valuemax', this.max);

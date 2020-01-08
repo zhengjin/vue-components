@@ -74,10 +74,6 @@
             </span>
           </span>
         </span>
-        <i class="el-input__icon"
-          v-if="validateState"
-          :class="['el-input__validateIcon', validateIcon]">
-        </i>
       </span>
       <i :class="`el-input-border-${focused ? 'focus' : 'none'}`"></i>
       <!-- 后置元素 -->
@@ -109,6 +105,8 @@
   </div>
 </template>
 <script>
+  /* eslint-disable no-debugger */
+
   import emitter from 'overseas-vue/src/mixins/emitter';
   import Migrating from 'overseas-vue/src/mixins/migrating';
   import calcTextareaHeight from './calcTextareaHeight';
