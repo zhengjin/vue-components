@@ -1,4 +1,4 @@
-const path = require('path');
+// const path = require('path');
 
 try {
   process.env.VUE_ENV = 'server';
