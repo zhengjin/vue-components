@@ -69,7 +69,7 @@
     ],
     [
       {
-        key: Keys.BLANK
+        key: Keys.DOT
       },
       {
         key: Keys.ZERO
@@ -81,7 +81,7 @@
   ];
 
   export default {
-    name: 'ElInputNumber',
+    name: 'ElInputMoney',
     mixins: [Focus('input'), emitter],
     inject: {
       elForm: {

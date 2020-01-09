@@ -2,9 +2,9 @@
   <div style="margin: 20px;">
     <el-form :model="ruleForm" status-icon :rules="rules" ref="ruleForm">
       <el-form-item label="金额" prop="age">
-        <el-input-number v-model="ruleForm.age" clearable placeholder="0.00">
+        <el-input-money v-model="ruleForm.age" clearable placeholder="0.00">
           <i style="color: #333333" slot="suffix">THB</i>
-        </el-input-number>
+        </el-input-money>
       </el-form-item>
 
       <el-form-item label="密码" prop="pass">
@@ -31,7 +31,7 @@
       </div>
 
       <el-form-item label="年龄" prop="age">
-        <el-input v-model.number="ruleForm.age" placeholder="数字键盘" type="number" pattern="[0-9]*" inputmode="decimal" clearable></el-input>
+        <el-input-number type="number" v-model.number="ruleForm.age" clearable placeholder="0.00"></el-input-number>
       </el-form-item>
       <div>
         <el-button @click="submitForm('ruleForm')" type="danger" style="width: 100%" size="large" round :disabled="false">提交</el-button>
