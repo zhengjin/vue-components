@@ -78,15 +78,21 @@
   @include scroll-bar;
 
   & .el-input-border-focus {
-    height: 1px;;
+    height: 1px;
     background-color: $--input-active-color;
-    display: block;;
+    display: block;
   }
 
   & .el-input-border-none {
-    height: 1px;;
+    height: 1px;
     background-color: $--input-border-color;
-    display: block;;
+    display: block;
+  }
+
+  & .el-input-border-error {
+    height: 1px;
+    background-color: $--input-error-color;
+    display: block;
   }
 
   & .el-input__clear {

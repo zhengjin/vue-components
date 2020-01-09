@@ -13,8 +13,7 @@
     }
     ]"
     @mouseenter="hovering = true"
-    @mouseleave="hovering = false"
-  >
+    @mouseleave="hovering = false">
     <template v-if="type !== 'textarea'">
       <!-- 前置元素 -->
       <div class="el-input-group__prepend" v-if="$slots.prepend">
@@ -37,33 +36,26 @@
         @focus="handleFocus"
         @blur="handleBlur"
         @change="handleChange"
-        :aria-label="label"
-      >
+        :aria-label="label">
       <!-- 前置内容 -->
       <span class="el-input__prefix" v-if="$slots.prefix || prefixIcon">
         <slot name="prefix"></slot>
         <i class="el-input__icon"
-           v-if="prefixIcon"
-           :class="prefixIcon">
+           v-if="prefixIcon" :class="prefixIcon">
         </i>
       </span>
       <!-- 后置内容 -->
-      <span
-        class="el-input__suffix"
-        v-if="getSuffixVisible()">
+      <span class="el-input__suffix" v-if="getSuffixVisible()">
         <span class="el-input__suffix-inner">
           <template v-if="!showClear || !showPwdVisible || !isWordLimitVisible">
             <slot name="suffix"></slot>
             <i class="el-input__icon"
-              v-if="suffixIcon"
-              :class="suffixIcon">
+              v-if="suffixIcon" :class="suffixIcon">
             </i>
           </template>
-          <i v-if="showClear"
-            class="el-input__icon el-icon-error el-input__clear"
-            @mousedown.prevent
-            @click="clear"
-          ></i>
+          <i v-if="showClear" class="el-input__icon el-icon-error el-input__clear"
+            @mousedown.prevent @click="clear">
+          </i>
           <i v-if="showPwdVisible"
             class="el-input__icon el-icon-view el-input__clear"
             @click="handlePasswordVisible"
@@ -75,7 +67,8 @@
           </span>
         </span>
       </span>
-      <i :class="`el-input-border-${focused ? 'focus' : 'none'}`"></i>
+      <i v-if="!validateState" :class="`el-input-border-${focused ? 'focus' : 'none'}`"></i>
+      <i v-if="validateState" class="el-input-border-error"></i>
       <!-- 后置元素 -->
       <div class="el-input-group__append" v-if="$slots.append">
         <slot name="append"></slot>
@@ -105,8 +98,6 @@
   </div>
 </template>
 <script>
-  /* eslint-disable no-debugger */
-
   import emitter from 'overseas-vue/src/mixins/emitter';
   import Migrating from 'overseas-vue/src/mixins/migrating';
   import calcTextareaHeight from './calcTextareaHeight';

@@ -12,7 +12,7 @@
                   v-model="displayValue" entertext="Confirm" format="^(?:\d+(?:\.\d{0,2})?)?$"
                   @onFocus="updateFocuse" @blur="handleBlur" @input="handleInput" @change="handleInputChange"/>
     <!-- 后置内容 -->
-    <span :class="`${focused ? 'el-input__suffix' : 'el-input__suffix'}`">
+    <span class="el-input__suffix">
       <span class="el-input__suffix-inner">
         <template>
           <slot name="suffix"></slot>
@@ -22,7 +22,8 @@
            class="el-input__icon el-icon-error el-input__clear" @mousedown.prevent @click="clear"></i>
       </span>
     </span>
-    <i :class="`el-input-border-${focused ? 'focus' : 'none'}`"></i>
+    <i v-if="!validateState" :class="`el-input-border-${focused ? 'focus' : 'none'}`"></i>
+    <i v-if="validateState" class="el-input-border-error"></i>
   </div>
 </template>
 <script>
