@@ -6,12 +6,13 @@
   position: relative;
   display: inline-block;
   width: 100%;
+  text-align: left;
   //line-height: #{$--input-height - 2};
 
   .numeric-input {
     height: $--input-height;
-    line-height: #{$--input-height - 2};
-    font-size: 48px;
+    line-height: $--input-height;
+    font-size: $--input-height;
     width: 77%;
   }
 

@@ -22,8 +22,8 @@
            class="el-input__icon el-icon-error el-input__clear" @mousedown.prevent @click="clear"></i>
       </span>
     </span>
-    <i v-if="!validateState" :class="`el-input-border-${focused ? 'focus' : 'none'}`"></i>
-    <i v-if="validateState" class="el-input-border-error"></i>
+    <i v-if="!validateFail" :class="`el-input-border-${focused ? 'focus' : 'none'}`"></i>
+    <i v-if="validateFail" class="el-input-border-error"></i>
   </div>
 </template>
 <script>
@@ -226,6 +226,9 @@
           success: 'el-icon-success',
           error: 'el-icon-circle-close'
         }[this.validateState];
+      },
+      validateFail() {
+        return this.validateState === 'success' ? '' : this.validateState;
       },
       displayValue: {
         get: function() {
