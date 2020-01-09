@@ -30,7 +30,7 @@ const webpackConfig = {
     modules: ['node_modules']
   },
   devServer: {
-    host: 'http://partner.dolfinthailand.com',
+    host: '0.0.0.0',
     port: 8085,
     publicPath: '/',
     disableHostCheck: true,
