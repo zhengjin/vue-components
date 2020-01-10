@@ -55,6 +55,12 @@
         width: $--radio-bordered-medium-input-width;
       }
     }
+
+    &.is-checked {
+      .el-radio__inner {
+        border: $--border-dark-blue;
+      }
+    }
   }
   @include m(small) {
     &.is-bordered {
@@ -64,10 +70,13 @@
       .el-radio__label {
         font-size: $--button-small-font-size;
         color: $--radio-checked-input-background-small-color !important;
+        position: relative;
+        top: -1px;
       }
       .el-radio__inner {
         height: $--radio-bordered-small-input-height;
         width: $--radio-bordered-small-input-width;
+        border: $--border-primary;
 
         &::after {
           width: .4rem !important;
@@ -146,7 +155,7 @@
     @include when(checked) {
       .el-radio__inner {
         background-color: $--radio-checked-input-background-color;
-        //border: solid 1px $--radio-checked-input-background-color;
+        //border: $--border-base;
         box-shadow: 0 1px 1px rgba(0,0,0,.1);
         text-align: center;
         background-clip: padding-box;

@@ -55,6 +55,7 @@ $--color-text-primary: #303133 !default;
 /// color|1|Font Color|2
 $--color-text-regular: #606266 !default;
 $--color-text-label: #999999 !default;
+$--color-text-label-primary: #333333 !default;
 /// color|1|Font Color|2
 $--color-text-secondary: #909399 !default;
 /// color|1|Font Color|2
@@ -93,6 +94,8 @@ $--border-width-base: 1px !default;
 $--border-style-base: solid !default;
 $--border-color-hover: $--color-text-placeholder !default;
 $--border-base: $--border-width-base $--border-style-base $--border-color-base !default;
+$--border-primary: $--border-width-base $--border-style-base $--color-green !default;
+$--border-dark-blue: $--border-width-base $--border-style-base $--color-dark-blue !default;
 $--none-border: 0 !default;
 /// borderRadius|1|Radius|0
 $--border-radius-base: 4px !default;
@@ -194,7 +197,7 @@ $--checkbox-checked-input-border-color: $--color-dark-blue !default;
 $--checkbox-checked-background-color: $--color-dark-blue !default;
 $--checkbox-checked-icon-color: $--fill-base !default;
 
-$--checkbox-input-border-color-hover: $--color-primary !default;
+$--checkbox-input-border-color-hover: $--border-color-base !default;
 /// height||Other|4
 $--checkbox-bordered-height: 40px !default;
 /// padding||Spacing|3

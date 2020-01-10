@@ -158,7 +158,8 @@
       }
 
       & + .el-checkbox__label {
-        color: $--checkbox-checked-font-color;
+        //color: $--checkbox-checked-font-color;
+        color: $--color-text-label-primary;
       }
     }
     @include when(focus) { /*focus时 视觉上区分*/
@@ -238,6 +239,7 @@
     padding-left: 10px;
     line-height: 19px;
     font-size: $--checkbox-font-size;
+    color: $--color-text-label-primary;
   }
 
   &:last-of-type {
