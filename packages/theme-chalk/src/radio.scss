@@ -79,10 +79,10 @@
         border: $--border-primary;
 
         &::after {
-          width: .4rem !important;
-          height: .2rem !important;
-          margin-left: -.2rem !important;
-          margin-top: -.2rem !important;
+          width: .13rem !important;
+          height: .05rem !important;
+          margin-left: -.08rem !important;
+          margin-top: -.07rem !important;
         }
       }
 
@@ -162,16 +162,16 @@
 
         &::after {
           content: '';
-          width: .7rem;
-          height: .4rem;
+          width: .25rem;
+          height: .13rem;
           border: 1px solid #ffffff;
           border-top: none;
           border-right: none;
           position: absolute;
           top: 50%;
           left: 50%;
-          margin-left: -.35rem;
-          margin-top: -.35rem;
+          margin-left: -.12rem;
+          margin-top: -.1rem;
           transform: rotate(-45deg);
         }
       }
