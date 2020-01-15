@@ -9,11 +9,15 @@
   text-align: left;
   //line-height: #{$--input-height - 2};
 
-  .numeric-input {
-    height: $--input-height;
-    line-height: $--input-height;
-    font-size: $--input-height;
-    width: 77%;
+  .input-style {
+    height: $--input-height !important;
+    line-height: $--input-height !important;
+    font-size: $--font-size-base !important;
+
+    .numeric-input-cursor{
+      height: $--font-size-base;
+      top: $--font-size-base;
+    }
   }
 
   & .el-input-border-focus {

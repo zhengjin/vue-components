@@ -8,7 +8,7 @@
       { 'is-without-controls': !controls },
       { 'is-controls-right': controlsAtRight }
     ]">
-    <NumericInput type="number" :layout="PasswordLayout" :placeholder="placeholder"
+    <NumericInput type="number" :layout="PasswordLayout" :placeholder="placeholder" suffixclass="input-style"
                   v-model="displayValue" entertext="Confirm" format="^(?:\d+(?:\.\d{0,2})?)?$"
                   @onFocus="updateFocuse" @blur="handleBlur" @input="handleInput" @change="handleInputChange"/>
     <!-- 后置内容 -->
