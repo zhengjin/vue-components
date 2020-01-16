@@ -72,7 +72,7 @@
 
 @include b(input) {
   position: relative;
-  font-size: $--font-size-base;
+  font-size: #{$--font-size-base + 2};
   display: inline-block;
   width: 100%;
   @include scroll-bar;

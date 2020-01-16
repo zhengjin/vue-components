@@ -12,11 +12,11 @@
   .input-style {
     height: $--input-height !important;
     line-height: $--input-height !important;
-    font-size: #{$--font-size-base + 5} !important;
+    font-size: #{$--font-size-base + 8} !important;
 
     .numeric-input-cursor{
-      height: #{$--font-size-base + 8};
-      top: #{$--font-size-base - 4.3};
+      height: #{$--font-size-base + 11};
+      top: #{$--font-size-base - 7};
     }
   }
 

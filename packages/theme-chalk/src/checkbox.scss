@@ -213,12 +213,12 @@
       border: 1px solid $--checkbox-checked-icon-color;
       border-left: 0;
       border-top: 0;
-      height: 7px;
-      left: 4px;
       position: absolute;
-      top: 1px;
+      top: 10%;
+      left: 35%;
       transform: rotate(45deg) scaleY(0);
-      width: 3px;
+      width: .13rem;
+      height: .25rem;
       transition: transform .15s ease-in .05s;
       transform-origin: center;
     }

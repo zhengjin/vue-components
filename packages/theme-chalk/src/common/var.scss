@@ -168,13 +168,13 @@ $--icon-color-base: $--color-info !default;
 /* Checkbox
 -------------------------- */
 /// fontSize||Font|1
-$--checkbox-font-size: 14px !default;
+$--checkbox-font-size: #{$--font-size-base + 2} !default;
 /// fontWeight||Font|1
 $--checkbox-font-weight: $--font-weight-primary !default;
 /// color||Color|0
 $--checkbox-font-color: $--color-text-regular !default;
-$--checkbox-input-height: 14px !default;
-$--checkbox-input-width: 14px !default;
+$--checkbox-input-height: #{$--font-size-base + 8} !default;
+$--checkbox-input-width: #{$--font-size-base + 8} !default;
 /// borderRadius||Border|2
 $--checkbox-border-radius: $--border-radius-small !default;
 /// color||Color|0
@@ -274,8 +274,8 @@ $--radio-bordered-padding: 12px 20px 0 10px !default;
 $--radio-bordered-medium-padding: 10px 10px 0 10px !default;
 $--radio-bordered-small-padding: 8px 15px 0 0 !default;
 $--radio-bordered-mini-padding: 6px 15px 0 10px !default;
-$--radio-bordered-medium-input-height: 25px !default;
-$--radio-bordered-medium-input-width: 25px !default;
+$--radio-bordered-medium-input-height: 24px !default;
+$--radio-bordered-medium-input-width: 24px !default;
 $--radio-bordered-medium-height: 36px !default;
 $--radio-bordered-small-input-height: 12px !default;
 $--radio-bordered-small-input-width: 12px !default;
@@ -442,7 +442,7 @@ $--notification-danger-icon-color: $--color-danger !default;
 -------------------------- */
 $--input-font-size: $--font-size-base !default;
 /// color||Color|0
-$--input-font-color: $--color-text-regular !default;
+$--input-font-color: $--color-text-label-primary !default;
 /// height||Other|4
 $--input-width: 140px !default;
 /// height||Other|4
@@ -474,7 +474,7 @@ $--input-disabled-color: $--disabled-color-base !default;
 $--input-disabled-placeholder-color: $--color-text-placeholder !default;
 
 /// fontSize||Font|1
-$--input-medium-font-size: 14px !default;
+$--input-medium-font-size: #{$--font-size-base + 2} !default;
 /// height||Other|4
 $--input-medium-height: 36px !default;
 /// fontSize||Font|1
@@ -538,7 +538,7 @@ $--button-padding-vertical: 12px !default;
 $--button-padding-horizontal: 20px !default;
 
 /// fontSize||Font|1
-$--button-medium-font-size: $--font-size-base !default;
+$--button-medium-font-size: #{$--font-size-base + 2} !default;
 /// borderRadius||Border|2
 $--button-medium-border-radius: $--border-radius-base !default;
 /// padding||Spacing|3
