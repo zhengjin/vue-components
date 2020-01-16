@@ -1,40 +1,18 @@
 <template>
-  <transition
-    name="dialog-fade"
-    @after-enter="afterEnter"
-    @after-leave="afterLeave">
-    <div
-      v-show="visible"
-      class="el-dialog__wrapper"
-      @click.self="handleWrapperClick">
-      <div
-        role="dialog"
-        :key="key"
-        aria-modal="true"
-        :aria-label="title || 'dialog'"
-        :class="['el-dialog', { 'is-fullscreen': fullscreen, 'el-dialog--center': center }, customClass]"
-        ref="dialog"
-        :style="style">
-        <div class="el-dialog__header">
-          <slot name="title">
-            <span class="el-dialog__title">{{ title }}</span>
-          </slot>
-          <button
-            type="button"
-            class="el-dialog__headerbtn"
-            aria-label="Close"
-            v-if="showClose"
-            @click="handleClose">
-            <i class="el-dialog__close el-icon el-icon-close"></i>
-          </button>
-        </div>
-        <div class="el-dialog__body" v-if="rendered"><slot></slot></div>
-        <div class="el-dialog__footer" v-if="$slots.footer">
-          <slot name="footer"></slot>
-        </div>
+  <div v-show="showDialog" class="mask" @touchmove.stop.prevent>
+    <div :style="currentStyle" class="dialog-wrapper" ref="dialogWraper">
+      <div class="title" :style="`height: ${titlePosition}rem`">
+        <slot name="title" /></div>
+      <div class="content" :style="`font-size: ${fontSize}rem`">
+        <slot name="content" /></div>
+      <div class="btn-container">
+        <div class="cancel" @click="$emit('cancle')" v-if="showCancle">
+          <slot name="cancle">Cancel</slot></div>
+        <div :class="{shouldPlain: confirmBtnPlain}" class="confirm" @click="closeDialog">
+          <slot name="confirm">Yes</slot></div>
       </div>
     </div>
-  </transition>
+  </div>
 </template>
 
 <script>
@@ -48,6 +26,34 @@
     mixins: [Popup, emitter, Migrating],
 
     props: {
+      position: {
+        type: String,
+        default: '0'
+      },
+      titlePosition: {
+        type: Number,
+        default: 0.6
+      },
+      fontSize: {
+        type: Number,
+        default: 0.36
+      },
+      showCancle: {
+        type: Boolean,
+        default: false
+      },
+      confirmBtnPlain: {
+        type: Boolean,
+        default: false
+      },
+      isPromotion: {
+        type: Boolean,
+        default: false
+      },
+      scrollY: {
+        type: Number,
+        default: 0
+      },
       title: {
         type: String,
         default: ''
@@ -99,7 +105,7 @@
 
       top: {
         type: String,
-        default: '15vh'
+        default: '60%'
       },
       beforeClose: Function,
       center: {
@@ -113,7 +119,8 @@
     data() {
       return {
         closed: false,
-        key: 0
+        key: 0,
+        showDialog: true
       };
     },
 
@@ -151,9 +158,30 @@
           }
         }
         return style;
+      },
+      currentStyle() {
+        if (this.isPromotion) {
+          return {
+            'margin-top': `${this.position}px`,
+            top: `calc(50vh + ${this.scrollY}px)`
+          };
+        } else {
+          return {
+            'margin-top': `${this.position}px`,
+            top: '50%'
+          };
+        }
       }
     },
-
+    created() {
+      this.$nextTick(() => {
+        const dialog = this.$refs.dialogWraper;
+        setTimeout(() => {
+          dialog.style.opacity = 1;
+          dialog.style.transform = 'translateY(-50%) translateX(-50%)  scale(1)';
+        }, 50);
+      });
+    },
     methods: {
       getMigratingConfig() {
         return {
@@ -189,6 +217,9 @@
       },
       afterLeave() {
         this.$emit('closed');
+      },
+      closeDialog() {
+        this.$emit('closeDialog');
       }
     },
 

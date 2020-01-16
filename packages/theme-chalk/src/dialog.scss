@@ -3,6 +3,137 @@
 @import "common/var";
 @import "common/popup";
 
+.mask{
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0,0,0,0.40);
+  display: flex;
+  .dialog-wrapper{
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%) translateX(-50%) scale(.3);
+    transition: 0.2s ease-out;
+    opacity: 0.1;
+    overflow: hidden;
+    width: 6.7rem;
+    background: $--color-white;
+    border-radius: 0.24rem;
+    position: absolute;
+    .title{
+      font-size: 0.44rem;
+      letter-spacing: 0;
+      text-align: center;
+      line-height: 0.6rem;
+      height: 0.6rem;
+      margin-top: 0.48rem;
+      margin-bottom: 0.62rem;
+      letter-spacing: 0;
+      text-align: center;
+      p {
+        font-size: 0.44rem;
+        text-align: center;
+        //font-family: $font-The1Bold;
+        color: #141E50;
+      }
+    }
+    .content{
+      p.tit{
+        font-size: .36rem;
+        //color: $color-gray-g;
+        letter-spacing: 0;
+        text-align: center;
+        line-height: 0.3rem;
+      }
+      p.amount{
+        line-height: 1.1rem;
+        //font-family: $font-The1Bold;
+        font-size: 0.72rem;
+        //color: $color-gray-g;
+        letter-spacing: 0;
+        text-align: center;
+        span{
+          //font-family: $font-The1Bold;
+          font-size: 0.36rem;
+          letter-spacing: 0;
+          text-align: center;
+          margin-right: 0.18rem;
+        }
+      }
+      p.text{
+        font-size: 0.36rem;
+        //color: $color-gray-f;
+        letter-spacing: 0;
+        text-align: center;
+        span{
+          font-size: 0.36rem;
+          color: #000020;
+          letter-spacing: 0;
+          text-align: center;
+          line-height: 0.3rem;
+        }
+      }
+      margin: 0rem 0.32rem .4rem .32rem;
+      font-size: 0.32rem;
+      //color: $color-gray-g;
+      letter-spacing: 0;
+      text-align: center;
+      line-height: 0.6rem;
+    }
+    .btn-container {
+      display: flex;
+      background-color: $--color-white;
+      justify-content:space-around;
+      .cancle {
+        border-right: 0.02rem solid #CCCCCC;
+      }
+      .confirm{
+        p{
+          //font-family: $font-The1Bold !important;
+        }
+        font-size: 0.32rem;
+        height: 1.2rem;
+        line-height: 1.2rem;
+        color: #D4004A;
+        letter-spacing: 0;
+        text-align: center;
+        flex-grow: 1;
+        flex: 1;
+        border-top: 0.02rem solid #CCCCCC;
+      }
+      .shouldPlain {
+        //border-top: 0.02rem solid $color-gray-e;
+        background-color: $--color-white;
+        //border-left:0.02rem solid $color-gray-e;
+      }
+      .cancel{
+        p{
+          //font-family: $font-The1Regular !important;
+        }
+        font-size: 0.32rem;
+        height: 1.2rem;
+        line-height: 1.2rem;
+        //color: $color-gray-l;
+        background-color: $--color-white;
+        letter-spacing: 0;
+        text-align: center;
+        flex-grow: 1;
+        flex: 1;
+        border-top: 0.02rem solid #CCCCCC;
+        border-right: 0.02rem solid #CCCCCC;
+        box-sizing: border-box;
+      }
+      .heigh1 {
+        height: .1rem;
+      }
+    }
+  }
+}
+
 @include b(dialog) {
   position: relative;
   margin: 0 auto 50px;

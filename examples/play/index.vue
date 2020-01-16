@@ -29,6 +29,10 @@
         <el-checkbox v-model="checked1">备选项1</el-checkbox>
       </div>
 
+      <div>
+        <el-avatar shape="square" :size="medium" :src="circleUrl"></el-avatar>
+        <el-avatar :size="medium" :src="circleUrl"></el-avatar>
+      </div>
       <div style="margin: 20px 0">
         <el-radio border size="small" v-model="radio" label="1" style="width: 100%">Paid</el-radio>
       </div>
@@ -37,6 +41,28 @@
       </div>
       <div>
         <el-button @click="resetForm('ruleForm')" type="danger" style="width: 100%" size="large" round :disabled="false">重置</el-button>
+      </div>
+
+      <el-dialog title="提示" :visible.sync="centerDialogVisible" width="30%" center
+              v-if="showDialog" :show-cancle="true" :confirm-btn-plain="true"
+                 @cancle="cancle" @closeDialog="closeDialog">
+        <p slot="title">titleTxt</p>
+        <p slot="content">
+          <template>contentTxt</template>
+        </p>
+        <p slot="cancle">Close</p>
+        <p slot="confirm">See reward</p>
+      </el-dialog>
+      <div>
+        <el-button type="danger" style="width: 100%" size="large" round :disabled="false" @click="showDialog = true">点击打开 Dialog</el-button>
+      </div>
+
+      <el-drawer title="我是标题" :visible.sync="drawer" :direction="direction" :with-header="false">
+        <el-button @click="centerDialogVisible = false">取 消</el-button>
+        <el-button type="primary" @click="centerDialogVisible = false">确 定</el-button>
+      </el-drawer>
+      <div>
+        <el-button type="danger" style="width: 100%" size="large" round :disabled="false" @click="drawer = true">点击打开 ActionSheet</el-button>
       </div>
     </el-form>
   </div>
@@ -86,6 +112,12 @@
         checked1: false,
         checked2: true,
         num: 1,
+        centerDialogVisible: false,
+        circleUrl: "https://cube.elemecdn.com/3/7c/3ea6beec64369c2642b92c6726f1epng.png",
+        drawer: false,
+        direction: 'btt',
+        medium: 'medium',
+        showDialog: false,
 
         ruleForm: {
           pass: '',
@@ -121,7 +153,13 @@
       },
       handleChange(value) {
         console.log(value);
-      }
+      },
+      cancle() {
+        this.showDialog = false
+      },
+      closeDialog() {
+
+      },
     }
   };
 </script>
