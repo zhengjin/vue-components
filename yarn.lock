@@ -6992,10 +6992,10 @@ output-file-sync@^1.1.2:
     mkdirp "^0.5.1"
     object-assign "^4.1.0"
 
-overseas-numeric-keyboard@0.0.15:
-  version "0.0.15"
-  resolved "https://registry.npm.taobao.org/overseas-numeric-keyboard/download/overseas-numeric-keyboard-0.0.15.tgz#afa2fd6035ed06b002222b4c384d38d74e87bf53"
-  integrity sha1-r6L9YDXtBrACIitMOE04106Hv1M=
+overseas-numeric-keyboard@0.0.16:
+  version "0.0.16"
+  resolved "https://registry.npm.taobao.org/overseas-numeric-keyboard/download/overseas-numeric-keyboard-0.0.16.tgz#c90223343997934e075c4d03fa7f4c53e4b49dbf"
+  integrity sha1-yQIjNDmXk04HXE0D+n9MU+S0nb8=
 
 p-defer@^1.0.0:
   version "1.0.0"
