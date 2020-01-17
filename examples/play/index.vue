@@ -17,24 +17,25 @@
         <el-input-number type="number" v-model.number="ruleForm.age" clearable placeholder="请输入内容"></el-input-number>
       </el-form-item>
       <div>
-        <el-card shadow="always" style="margin-bottom: 8px">
+        <el-card shadow="always" style="margin-bottom: .2rem">
           <el-radio border size="medium" v-model="radio" label="1" style="width: 100%">Split equally</el-radio>
         </el-card>
         <el-card shadow="always">
           <el-radio border size="medium" v-model="radio" label="2" style="width: 100%">Split individually</el-radio>
         </el-card>
       </div>
+      <div>
+        <el-radio border size="small" v-model="radio" label="1" style="width: 100%">Paid</el-radio>
+      </div>
 
-      <div style="margin: 20px 0">
+      <div>
         <el-checkbox v-model="checked1">备选项1</el-checkbox>
       </div>
 
       <div>
         <el-avatar shape="square" :size="medium" :src="circleUrl"></el-avatar>
+        <span style="width: .5rem; display: inline-block"></span>
         <el-avatar :size="medium" :src="circleUrl"></el-avatar>
-      </div>
-      <div style="margin: 20px 0">
-        <el-radio border size="small" v-model="radio" label="1" style="width: 100%">Paid</el-radio>
       </div>
       <div>
         <el-button @click="submitForm('ruleForm')" type="danger" style="width: 100%" size="large" round :disabled="false">提交</el-button>
