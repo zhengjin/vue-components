@@ -58,9 +58,14 @@
         <el-button type="danger" style="width: 100%" size="large" round :disabled="false" @click="showDialog = true">点击打开 Dialog</el-button>
       </div>
 
-      <el-drawer title="我是标题" :visible.sync="drawer" :direction="direction" :with-header="false">
-        <el-button @click="centerDialogVisible = false">取 消</el-button>
-        <el-button type="primary" @click="centerDialogVisible = false">确 定</el-button>
+      <el-drawer :visible.sync="drawer" :direction="direction" :with-header="false">
+        <div slot="content">
+          <template>
+            <i id="paid" class="el-icon-circle-check cell-center"><span class="cel-btn-txt">mark as paid</span></i>
+            <i id="show" class="el-icon-collection cell-center"><span class="cel-btn-txt">show QR</span></i>
+          </template>
+        </div>
+        <p slot="cancel" class="cell-center">Cancel</p>
       </el-drawer>
       <div>
         <el-button type="danger" style="width: 100%" size="large" round :disabled="false" @click="drawer = true">点击打开 ActionSheet</el-button>

@@ -22,8 +22,7 @@
           :style="isHorizontal ? `width: ${size}` : `height: ${size}`"
           ref="drawer"
           role="dialog"
-          tabindex="-1"
-          >
+          tabindex="-1">
           <header class="el-drawer__header" id="el-drawer__title" v-if="withHeader">
             <slot name="title">
               <span role="heading" tabindex="0" :title="title">{{ title }}</span>
@@ -38,7 +37,13 @@
             </button>
           </header>
           <section class="el-drawer__body" v-if="rendered">
-            <slot></slot>
+            <!--<slot></slot>-->
+            <div class="content border-style" @click="$emit('content')">
+              <slot name="content"/>
+            </div>
+            <div class="cancel border-style" @click="$emit('cancel')" v-if="showCancle">
+              <slot name="cancel">Cancel</slot>
+            </div>
           </section>
         </div>
       </div>
@@ -55,6 +60,10 @@ export default {
   name: 'ElDrawer',
   mixins: [Popup, emitter],
   props: {
+    showCancle: {
+      type: Boolean,
+      default: true
+    },
     appendToBody: {
       type: Boolean,
       default: false

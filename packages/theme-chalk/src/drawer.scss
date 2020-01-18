@@ -112,7 +112,7 @@ $directions: rtl, ltr, ttb, btt;
 @include b(drawer) {
   position: absolute;
   box-sizing: border-box;
-  background-color: $--dialog-background-color;
+  //background-color: $--dialog-background-color;
   display: flex;
   flex-direction: column;
   box-shadow: 0 8px 10px -5px rgba(0, 0, 0, 0.2),
@@ -123,6 +123,41 @@ $directions: rtl, ltr, ttb, btt;
   @each $direction in $directions {
     @include animation-out($direction);
     @include animation-in($direction);
+  }
+  .content{
+    height: #{$--cell-height + 1} !important;
+    i{
+      display: block;
+      height: #{$--cell-height - 0.25};
+      vertical-align:middle;
+      //padding-top: #{$--cancel-height - 0.7};
+    }
+    i:not(:last-child) {
+      border-bottom: 1px solid #A6A6A6;
+    }
+    i:first-child {
+      padding-top: .2rem;
+    }
+  }
+
+  .border-style{
+    background-color: $--dialog-background-color;
+    margin: .2rem .3rem;
+    border-radius: .3rem;
+    text-align: center;
+    font-size: #{$--font-size-base + 4};
+    height: $--cell-height;
+
+    .cel-btn-txt{
+      padding-left: .1rem;
+    }
+  }
+
+  .cell-center{
+    height: 100%;
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
   }
 
   &__wrapper {
