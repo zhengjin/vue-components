@@ -14,7 +14,7 @@
         <el-input type="password" v-model="ruleForm.checkPass" clearable placeholder="请输入内容"></el-input>
       </el-form-item>
       <el-form-item label="年龄" prop="age">
-        <el-input-number type="number" v-model.number="ruleForm.age" clearable placeholder="请输入内容" :disabled="false"></el-input-number>
+        <el-input-number type="number" v-model.number="ruleForm.age" clearable placeholder="0" :disabled="false"></el-input-number>
       </el-form-item>
       <div>
         <el-card shadow="always" style="margin-bottom: .2rem">
