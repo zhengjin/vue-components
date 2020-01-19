@@ -14,7 +14,7 @@
         <el-input type="password" v-model="ruleForm.checkPass" clearable placeholder="请输入内容"></el-input>
       </el-form-item>
       <el-form-item label="年龄" prop="age">
-        <el-input-number type="number" v-model.number="ruleForm.age" clearable placeholder="0" :disabled="true"></el-input-number>
+        <el-input-number type="number" v-model.number="ruleForm.age" clearable placeholder="0" :disabled="false"></el-input-number>
       </el-form-item>
       <div>
         <el-card shadow="always" style="margin-bottom: .2rem">
@@ -44,7 +44,7 @@
         <el-button @click="resetForm('ruleForm')" type="danger" style="width: 100%" size="large" round :disabled="false">重置</el-button>
       </div>
 
-      <el-dialog title="提示" :visible.sync="centerDialogVisible" width="30%" center
+      <el-dialog :visible.sync="centerDialogVisible" width="30%" center
               v-if="showDialog" :show-cancle="true" :confirm-btn-plain="true"
                  @cancle="cancle" @closeDialog="closeDialog">
         <p slot="title">titleTxt</p>
