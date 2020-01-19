@@ -38,7 +38,7 @@
           </header>
           <section class="el-drawer__body" v-if="rendered">
             <!--<slot></slot>-->
-            <div class="content border-style" @click="$emit('content')">
+            <div class="content border-style" @click="handleClick">
               <slot name="content"/>
             </div>
             <div class="cancel border-style" @click="$emit('cancel')" v-if="showCancle">
@@ -161,6 +161,10 @@ export default {
     },
     afterLeave() {
       this.$emit('closed');
+    },
+    handleClick(evt) {
+      console.log(evt + 'handleContentClick');
+      this.$emit('handleContentClick', evt);
     },
     hide(cancel) {
       if (cancel !== false) {

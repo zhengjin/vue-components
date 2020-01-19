@@ -14,7 +14,7 @@
         <el-input type="password" v-model="ruleForm.checkPass" clearable placeholder="请输入内容"></el-input>
       </el-form-item>
       <el-form-item label="年龄" prop="age">
-        <el-input-number type="number" v-model.number="ruleForm.age" clearable placeholder="请输入内容"></el-input-number>
+        <el-input-number type="number" v-model.number="ruleForm.age" clearable placeholder="请输入内容" :disabled="false"></el-input-number>
       </el-form-item>
       <div>
         <el-card shadow="always" style="margin-bottom: .2rem">
@@ -58,11 +58,11 @@
         <el-button type="danger" style="width: 100%" size="large" round :disabled="false" @click="showDialog = true">点击打开 Dialog</el-button>
       </div>
 
-      <el-drawer :visible.sync="drawer" :direction="direction" :with-header="false">
+      <el-drawer :visible.sync="drawer" :direction="direction" :with-header="false" @cancel="drawer = false" @handleContentClick="closeDialog">
         <div slot="content">
-          <template>
-            <i id="paid" class="el-icon-circle-check cell-center"><span class="cel-btn-txt">mark as paid</span></i>
-            <i id="show" class="el-icon-collection cell-center"><span class="cel-btn-txt">show QR</span></i>
+          <template><!--i标签中的id和span中的data-index定位点击的是哪个按钮-->
+            <i id="paid" class="el-icon-circle-check cell-center"><span :data-index="1" class="cel-btn-txt">mark as paid</span></i>
+            <i id="show" class="el-icon-collection cell-center"><span :data-index="2" class="cel-btn-txt">show QR</span></i>
           </template>
         </div>
         <p slot="cancel" class="cell-center">Cancel</p>
@@ -163,8 +163,17 @@
       cancle() {
         this.showDialog = false
       },
-      closeDialog() {
+      closeDialog(evt) {
+        let dom = evt.target;
+        let targetId = dom.getAttribute('id');
+        let index = dom.getAttribute('data-index');
+        if(targetId === 'paid' || index === '1'){
+          console.log('call paid method')
+        }else {
+          console.log('call show method')
+        }
 
+        this.drawer = false;
       },
     }
   };
