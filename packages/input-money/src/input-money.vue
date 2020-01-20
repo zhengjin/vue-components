@@ -22,11 +22,12 @@
            class="el-input__icon el-icon-error el-input__clear" @mousedown.prevent @click="clear"></i>
       </span>
     </span>
-    <i v-if="!validateFail" :class="`el-input-border-${focused ? 'focus' : 'none'}`"></i>
-    <i v-if="validateFail" class="el-input-border-error"></i>
+    <i :class="validateBorder"></i>
   </div>
 </template>
 <script>
+  /* eslint-disable no-debugger */
+
   import emitter from 'overseas-vue/src/mixins/emitter';
   import Focus from 'overseas-vue/src/mixins/focus';
   import RepeatClick from 'overseas-vue/src/directives/repeat-click';
@@ -212,7 +213,8 @@
         return this.disabled || (this.elForm || {}).disabled;
       },
       nativeInputValue() {
-        return this.value === null || this.value === undefined ? '' : Number(this.value);
+        const regExp = /^-?\d+(,\d{3})*(\.\d{0,2})?$/;
+        return this.value === null || this.value === undefined ? '' : regExp.test(this.value);
       },
       showClear() {
         return this.clearable && this.nativeInputValue && this.focused;
@@ -227,8 +229,12 @@
           error: 'el-icon-circle-close'
         }[this.validateState];
       },
-      validateFail() {
-        return this.validateState === 'success' ? '' : this.validateState;
+      validateBorder() {
+        if (this.focused) {
+          return 'el-input-border-focus';
+        } else {
+          return this.validateState === 'error' ? 'el-input-border-error' : 'el-input-border-none';
+        }
       },
       displayValue: {
         get: function() {
