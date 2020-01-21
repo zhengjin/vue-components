@@ -9,8 +9,8 @@
       { 'is-controls-right': controlsAtRight }
     ]">
     <NumericInput type="money" :layout="PasswordLayout" :placeholder="placeholder" :disabled="inputNumberDisabled"
-                  v-model="displayValue" entertext="Confirm" format="^-?\d+(,\d{3})*(\.\d{0,2})?$"
-                  @onFocus="updateFocuse" @blur="handleBlur" @input="handleInput" @change="handleInputChange"/>
+                  v-model="displayValue" entertext="Confirm" format="^-?\d+(,\d{3})*(\.\d{0,2})?$" :maxlength="maxlength"
+                  @onFocus="updateFocuse" @blur="handleBlur" @input="handleInput"/>
     <!-- 后置内容 -->
     <span class="el-input__suffix">
       <span class="el-input__suffix-inner">
@@ -106,6 +106,10 @@
       stepStrictly: {
         type: Boolean,
         default: false
+      },
+      maxlength: {
+        type: Number,
+        default: Infinity
       },
       max: {
         type: Number,
@@ -284,6 +288,7 @@
         return precision;
       },
       _increase(val, step) {
+        console.log('_increase :' + val);
         if (typeof val !== 'number' && val !== undefined) return this.currentValue;
 
         const precisionFactor = Math.pow(10, this.numPrecision);
@@ -291,6 +296,7 @@
         return this.toPrecision((precisionFactor * val + precisionFactor * step) / precisionFactor);
       },
       _decrease(val, step) {
+        console.log('_decrease :' + val);
         if (typeof val !== 'number' && val !== undefined) return this.currentValue;
 
         const precisionFactor = Math.pow(10, this.numPrecision);
@@ -322,6 +328,7 @@
       //   this.$emit('focus', event);
       // },
       setCurrentValue(newVal) {
+        console.log('new value:' + newVal);
         const oldVal = this.currentValue;
         if (typeof newVal === 'number' && this.precision !== undefined) {
           newVal = this.toPrecision(newVal, this.precision);
