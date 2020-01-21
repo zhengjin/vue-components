@@ -36,7 +36,7 @@
       </div>
 
       <el-form-item label="年龄" prop="age">
-        <el-input-number type="number" v-model.number="ruleForm.age" clearable placeholder="0" :disabled="false"></el-input-number>
+        <el-input-number :maxlength="6" type="number" v-model.number="ruleForm.age" clearable placeholder="0" :disabled="false"></el-input-number>
       </el-form-item>
 
       <div>

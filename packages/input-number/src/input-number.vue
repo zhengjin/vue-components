@@ -8,7 +8,7 @@
       { 'is-without-controls': !controls },
       { 'is-controls-right': controlsAtRight }
     ]">
-    <NumericInput type="number" :layout="PasswordLayout" :placeholder="placeholder" suffixclass="input-style"
+    <NumericInput type="number" :layout="PasswordLayout" :placeholder="placeholder" suffixclass="input-style" :maxlength="maxlength"
                   v-model="displayValue" entertext="Confirm" format="^(?:\d+(?:\.\d{0,2})?)?$" :disabled="inputNumberDisabled"
                   @onFocus="updateFocuse" @blur="handleBlur" @input="handleInput"/>
     <!-- 后置内容 -->
@@ -112,6 +112,10 @@
       min: {
         type: Number,
         default: -Infinity
+      },
+      maxlength: {
+        type: Number,
+        default: Infinity
       },
       clearable: {
         type: Boolean,
