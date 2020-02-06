@@ -2,31 +2,29 @@
   <div style="margin: 20px;">
     <el-form :model="ruleForm" status-icon :rules="rules" ref="ruleForm">
       <el-form-item label="金额" prop="age">
-        <el-input-money :maxlength="4" v-model="ruleForm.age" clearable placeholder="0.00">
+        <el-input-money :maxlength="14" v-model="ruleForm.age" clearable placeholder="0.00" :disabled="false">
           <i style="color: #333333; font-style:normal" slot="suffix">THB</i>
         </el-input-money>
       </el-form-item>
 
-      <el-form-item label="密码" prop="pass">
-        <el-input v-model="ruleForm.pass" autocomplete="off" clearable placeholder="请输入内容"></el-input>
-      </el-form-item>
       <el-form-item label="确认密码" prop="checkPass">
-        <el-input type="password" v-model="ruleForm.checkPass" clearable placeholder="请输入内容"></el-input>
+        <el-input type="password" v-model="ruleForm.checkPass" clearable placeholder="请输入内容" :disabled="true"></el-input>
       </el-form-item>
+
       <div>
         <el-card shadow="always" style="margin-bottom: .2rem">
-          <el-radio border size="medium" v-model="radio" label="1" style="width: 100%">Split equally</el-radio>
+          <el-radio border size="medium" v-model="radio" label="1" style="width: 100%" :disabled="false">Split equally</el-radio>
         </el-card>
         <el-card shadow="always">
-          <el-radio border size="medium" v-model="radio" label="2" style="width: 100%">Split individually</el-radio>
+          <el-radio border size="medium" v-model="radio" label="2" style="width: 100%" :disabled="false">Split individually</el-radio>
         </el-card>
       </div>
       <div>
-        <el-radio border size="small" v-model="radio" label="1" style="width: 100%">Paid</el-radio>
+        <el-radio border size="small" v-model="radio" label="1" style="width: 100%" :disabled="false">Paid</el-radio>
       </div>
 
       <div>
-        <el-checkbox v-model="checked1">备选项1</el-checkbox>
+        <el-checkbox v-model="checked1" :disabled="false">备选项1</el-checkbox>
       </div>
 
       <div>
@@ -43,12 +41,11 @@
         <el-button @click="submitForm('ruleForm')" type="danger" style="width: 100%" size="large" round :disabled="false">提交</el-button>
       </div>
       <div>
-        <el-button @click="resetForm('ruleForm')" type="danger" style="width: 100%" size="large" round :disabled="false">重置</el-button>
+        <el-button @click="resetForm('ruleForm')" type="danger" style="width: 100%" size="large" round :disabled="true">重置</el-button>
       </div>
 
-      <el-dialog :visible.sync="centerDialogVisible" width="30%" center
-              v-if="showDialog" :show-cancle="true" :confirm-btn-plain="true"
-                 @cancle="cancle" @closeDialog="closeDialog">
+      <el-dialog :visible.sync="centerDialogVisible" width="30%" center :show-cancle="true" :confirm-btn-plain="true"
+              v-if="showDialog" @cancle="cancle" @closeDialog="closeDialog">
         <p slot="title">titleTxt</p>
         <p slot="content">
           <template>contentTxt</template>
