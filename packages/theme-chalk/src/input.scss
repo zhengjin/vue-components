@@ -206,7 +206,7 @@
 
   @include when(disabled) {
     .el-input__inner {
-      background-color: $--input-disabled-fill;
+      background-color: $--input-background-color;
       border-color: $--input-disabled-border;
       color: $--input-disabled-color;
       cursor: not-allowed;
