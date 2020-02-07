@@ -57,14 +57,14 @@
         <el-button type="danger" style="width: 100%" size="large" round :disabled="false" @click="showDialog = true">点击打开 Dialog</el-button>
       </div>
 
-      <el-drawer :visible.sync="drawer" :direction="direction" :with-header="false" @cancel="drawer = false" @handleContentClick="closeDialog">
+      <el-drawer size="25%" :visible.sync="drawer" :direction="direction" :with-header="false" @cancel="drawer = false" @handleContentClick="closeDialog">
         <div slot="content">
           <template><!--i标签中的id和span中的data-index定位点击的是哪个按钮-->
             <i id="paid" class="el-icon-circle-check cell-center"><span :data-index="1" class="cel-btn-txt">mark as paid</span></i>
-            <i id="show" class="el-icon-collection cell-center"><span :data-index="2" class="cel-btn-txt">show QR</span></i>
+            <!--<i id="show" class="el-icon-collection cell-center"><span :data-index="2" class="cel-btn-txt">show QR</span></i>-->
           </template>
         </div>
-        <p slot="cancel" class="cell-center">Cancel</p>
+        <p slot="cancel" class="cell-center" style="height: 1.1rem">Cancel</p>
       </el-drawer>
       <div>
         <el-button type="danger" style="width: 100%" size="large" round :disabled="false" @click="drawer = true">点击打开 ActionSheet</el-button>
