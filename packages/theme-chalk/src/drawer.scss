@@ -125,7 +125,7 @@ $directions: rtl, ltr, ttb, btt;
     @include animation-in($direction);
   }
   .content{
-    height: #{$--cell-height + 1} !important;
+    //height: #{$--cell-height + 1};
     i{
       display: block;
       height: #{$--cell-height - 0.25};
@@ -138,6 +138,9 @@ $directions: rtl, ltr, ttb, btt;
     i:first-child {
       padding-top: .2rem;
     }
+    i:last-child {
+      padding-bottom: .2rem;
+    }
   }
 
   .border-style{
@@ -146,7 +149,7 @@ $directions: rtl, ltr, ttb, btt;
     border-radius: .3rem;
     text-align: center;
     font-size: #{$--font-size-base + 4};
-    height: $--cell-height;
+    //height: $--cell-height;
 
     .cel-btn-txt{
       padding-left: .1rem;
