@@ -336,8 +336,9 @@
         this.$emit('focus', event);
 
         debugger;
+        const target = this;
         setTimeout(() => {
-          this.$refs.input.scrollIntoView();
+          target.scrollIntoView(false);
         }, 100);
       },
       handleCompositionStart() {
