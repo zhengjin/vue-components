@@ -97,6 +97,8 @@
   </div>
 </template>
 <script>
+  /* eslint-disable no-debugger */
+
   import emitter from 'overseas-vue/src/mixins/emitter';
   import Migrating from 'overseas-vue/src/mixins/migrating';
   import calcTextareaHeight from './calcTextareaHeight';
@@ -332,6 +334,11 @@
       handleFocus(event) {
         this.focused = true;
         this.$emit('focus', event);
+
+        debugger;
+        setTimeout(() => {
+          this.$refs.input.scrollIntoView();
+        }, 100);
       },
       handleCompositionStart() {
         this.isComposing = true;

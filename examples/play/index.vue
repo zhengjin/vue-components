@@ -8,7 +8,7 @@
       </el-form-item>
 
       <el-form-item label="确认密码" prop="checkPass">
-        <el-input type="password" v-model="ruleForm.checkPass" clearable placeholder="请输入内容" :disabled="true"></el-input>
+        <el-input type="password" v-model="ruleForm.checkPass" clearable placeholder="请输入内容" :disabled="false"></el-input>
       </el-form-item>
 
       <div>
