@@ -351,6 +351,7 @@
 
         window.addEventListener('resize', function() {
           let resizeHeight = document.documentElement.clientHeight || document.body.clientHeight;
+          console.log('监听到屏幕变化' + resizeHeight);
           if (originHeight < resizeHeight) {
             console.log('Android 键盘收起啦！');
             // Android 键盘收起后操作
@@ -360,22 +361,22 @@
             // Android 键盘弹起后操作
             document.body.style.marginBottom = '250px';
             this.activeElementScrollIntoView(this.getInput(), 1000);
+
+            const activeElement = this.getInput();
+            const editable = activeElement.getAttribute('contenteditable');
+
+            // 输入框、textarea或富文本获取焦点后没有将该元素滚动到可视区
+            if (activeElement.tagName === 'INPUT' || activeElement.tagName === 'TEXTAREA' || editable === '' || editable) {
+              console.log('input 滚动' + JSON.stringify(activeElement));
+              setTimeout(function() {
+                window.scrollTo(0, 250);
+                activeElement.scrollIntoView();
+              }, 1000);
+            }
           }
 
           originHeight = resizeHeight;
         }, false);
-      },
-      activeElementScrollIntoView(activeElement, delay) {
-        let editable = activeElement.getAttribute('contenteditable');
-
-        // 输入框、textarea或富文本获取焦点后没有将该元素滚动到可视区
-        if (activeElement.tagName === 'INPUT' || activeElement.tagName === 'TEXTAREA' || editable === '' || editable) {
-          console.log('input 滚动' + JSON.stringify(activeElement));
-          setTimeout(function() {
-            window.scrollTo(0, 250);
-            activeElement.scrollIntoView();
-          }, delay);
-        }
       },
       handleCompositionStart() {
         this.isComposing = true;
