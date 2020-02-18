@@ -98,6 +98,7 @@
 </template>
 <script>
   /* eslint-disable no-debugger */
+  import Vue from 'vue';
 
   import emitter from 'overseas-vue/src/mixins/emitter';
   import Migrating from 'overseas-vue/src/mixins/migrating';
@@ -338,9 +339,12 @@
         debugger;
         // const target = this;
         setTimeout(() => {
-          event.target.scrollIntoView();
-          window.scrollTo(0, 500);
-          // target.scrollIntoView(false);
+          Vue.nextTick(function() {
+            document.body.style.marginBottom = '500';
+            window.scrollTo(0, 500);
+            event.target.scrollIntoView();
+            // target.scrollIntoView(false);
+          });
         }, 100);
       },
       handleCompositionStart() {
