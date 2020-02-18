@@ -347,6 +347,9 @@
         //     // target.scrollIntoView(false);
         //   });
         // }, 100);
+        window.οnresize = function() {
+          console.log('监听到屏幕变化1');
+        };
         let originHeight = document.documentElement.clientHeight || document.body.clientHeight;
 
         window.addEventListener('resize', function() {
