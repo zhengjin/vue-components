@@ -98,7 +98,7 @@
 </template>
 <script>
   /* eslint-disable no-debugger */
-  import Vue from 'vue';
+  // import Vue from 'vue';
 
   import emitter from 'overseas-vue/src/mixins/emitter';
   import Migrating from 'overseas-vue/src/mixins/migrating';
@@ -338,15 +338,44 @@
 
         debugger;
         // const target = this;
-        setTimeout(() => {
-          Vue.nextTick(function() {
-            document.body.style.marginBottom = '1500px';
-            window.scrollTo(0, 1500);
-            console.log('--------------------------------------------' + document.body.style.marginBottom);
-            event.target.scrollIntoView();
-            // target.scrollIntoView(false);
-          });
-        }, 100);
+        // setTimeout(() => {
+        //   Vue.nextTick(function() {
+        //     document.body.style.marginBottom = '1500px';
+        //     window.scrollTo(0, 1500);
+        //     console.log('--------------------------------------------' + document.body.style.marginBottom);
+        //     event.target.scrollIntoView();
+        //     // target.scrollIntoView(false);
+        //   });
+        // }, 100);
+        let originHeight = document.documentElement.clientHeight || document.body.clientHeight;
+
+        window.addEventListener('resize', function() {
+          let resizeHeight = document.documentElement.clientHeight || document.body.clientHeight;
+          if (originHeight < resizeHeight) {
+            console.log('Android 键盘收起啦！');
+            // Android 键盘收起后操作
+            document.body.style.marginBottom = '0px';
+          } else {
+            console.log('Android 键盘弹起啦！');
+            // Android 键盘弹起后操作
+            document.body.style.marginBottom = '250px';
+            this.activeElementScrollIntoView(this.getInput(), 1000);
+          }
+
+          originHeight = resizeHeight;
+        }, false);
+      },
+      activeElementScrollIntoView(activeElement, delay) {
+        let editable = activeElement.getAttribute('contenteditable');
+
+        // 输入框、textarea或富文本获取焦点后没有将该元素滚动到可视区
+        if (activeElement.tagName === 'INPUT' || activeElement.tagName === 'TEXTAREA' || editable === '' || editable) {
+          console.log('input 滚动' + JSON.stringify(activeElement));
+          setTimeout(function() {
+            window.scrollTo(0, 250);
+            activeElement.scrollIntoView();
+          }, delay);
+        }
       },
       handleCompositionStart() {
         this.isComposing = true;
