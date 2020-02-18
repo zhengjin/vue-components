@@ -339,6 +339,7 @@
         // const target = this;
         setTimeout(() => {
           event.target.scrollIntoView();
+          window.scrollTo(0, 500);
           // target.scrollIntoView(false);
         }, 100);
       },
