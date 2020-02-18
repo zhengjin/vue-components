@@ -336,9 +336,10 @@
         this.$emit('focus', event);
 
         debugger;
-        const target = this;
+        // const target = this;
         setTimeout(() => {
-          target.scrollIntoView(false);
+          event.target.scrollIntoView();
+          // target.scrollIntoView(false);
         }, 100);
       },
       handleCompositionStart() {
