@@ -340,8 +340,8 @@
         // const target = this;
         setTimeout(() => {
           Vue.nextTick(function() {
-            document.body.style.marginBottom = '500';
-            window.scrollTo(0, 500);
+            document.body.style.marginBottom = '1500';
+            window.scrollTo(0, 1500);
             event.target.scrollIntoView();
             // target.scrollIntoView(false);
           });
