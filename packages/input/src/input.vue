@@ -268,7 +268,7 @@
         const originHeight = document.documentElement.clientHeight || document.body.clientHeight;
         const scrollValue = originHeight - inputPosition;
         return scrollValue < 200;
-      },
+      }
     },
 
     watch: {
