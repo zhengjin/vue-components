@@ -255,19 +255,6 @@
         // show exceed style if length of initial value greater then maxlength
         return this.isWordLimitVisible &&
           (this.textLength > this.upperLimit);
-      },
-      canScroll() {
-        let getPoint = (obj) => {
-          let t = obj.offsetTop;
-          while (obj = obj.offsetParent) { // eslint-disable-line
-            t += obj.offsetTop;
-          }
-          return t;
-        };
-        const inputPosition = getPoint(this.getInput());
-        const originHeight = document.documentElement.clientHeight || document.body.clientHeight;
-        const scrollValue = originHeight - inputPosition;
-        return scrollValue < 200;
       }
     },
 
@@ -321,7 +308,7 @@
           this.dispatch('ElFormItem', 'el.form.blur', [this.value]);
         }
 
-        if (this.canScroll) {
+        if (this.canScroll()) {
           console.log('Android 键盘收起啦！');
           // Android 键盘收起后操作
           document.body.style.marginBottom = '0px';
@@ -391,7 +378,7 @@
         // const scrollValue = originHeight - inputPosition;
         // const scrollFlag = scrollValue < 200;
 
-        if (this.canScroll) {
+        if (this.canScroll()) {
           console.log('Android 键盘弹起啦！');
           // Android 键盘弹起后操作
           document.body.style.marginBottom = '250px';
@@ -437,6 +424,19 @@
 
         //   originHeight = resizeHeight;
         // }, false);
+      },
+      canScroll() {
+        let getPoint = (obj) => {
+          let t = obj.offsetTop;
+          while (obj = obj.offsetParent) { // eslint-disable-line
+            t += obj.offsetTop;
+          }
+          return t;
+        };
+        const inputPosition = getPoint(this.getInput());
+        const originHeight = document.documentElement.clientHeight || document.body.clientHeight;
+        const scrollValue = originHeight - inputPosition;
+        return scrollValue < 200;
       },
       handleCompositionStart() {
         this.isComposing = true;
