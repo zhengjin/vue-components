@@ -363,7 +363,7 @@
         this.focused = true;
         this.$emit('focus', event);
 
-        debugger;
+        // debugger;
         // const target = this;
         // setTimeout(() => {
         //   Vue.nextTick(function() {
