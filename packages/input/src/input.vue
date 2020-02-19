@@ -255,7 +255,20 @@
         // show exceed style if length of initial value greater then maxlength
         return this.isWordLimitVisible &&
           (this.textLength > this.upperLimit);
-      }
+      },
+      canScroll() {
+        let getPoint = (obj) => {
+          let t = obj.offsetTop;
+          while (obj = obj.offsetParent) { // eslint-disable-line
+            t += obj.offsetTop;
+          }
+          return t;
+        };
+        const inputPosition = getPoint(this.getInput());
+        const originHeight = document.documentElement.clientHeight || document.body.clientHeight;
+        const scrollValue = originHeight - inputPosition;
+        return scrollValue < 200;
+      },
     },
 
     watch: {
@@ -307,6 +320,22 @@
         if (this.validateEvent) {
           this.dispatch('ElFormItem', 'el.form.blur', [this.value]);
         }
+
+        if (this.canScroll) {
+          console.log('Android 键盘收起啦！');
+          // Android 键盘收起后操作
+          document.body.style.marginBottom = '0px';
+
+          const activeElement = this.getInput();
+
+          // 输入框、textarea或富文本获取焦点后没有将该元素滚动到可视区
+          if (activeElement.tagName === 'INPUT' || activeElement.tagName === 'TEXTAREA') {
+            setTimeout(function() {
+              window.scrollTo(0, 0);
+              activeElement.scrollIntoView();
+            }, 100);
+          }
+        }
       },
       select() {
         this.getInput().select();
@@ -350,8 +379,36 @@
         // window.οnresize = function() {
         //   console.log('监听到屏幕变化1');
         // };
-        // let originHeight = document.documentElement.clientHeight || document.body.clientHeight;
+        // let getPoint = (obj) => {
+        //   let t = obj.offsetTop;
+        //   while (obj = obj.offsetParent) { // eslint-disable-line
+        //     t += obj.offsetTop;
+        //   }
+        //   return t;
+        // };
+        // const inputPosition = getPoint(this.getInput());
+        // const originHeight = document.documentElement.clientHeight || document.body.clientHeight;
+        // const scrollValue = originHeight - inputPosition;
+        // const scrollFlag = scrollValue < 200;
 
+        if (this.canScroll) {
+          console.log('Android 键盘弹起啦！');
+          // Android 键盘弹起后操作
+          document.body.style.marginBottom = '250px';
+          // this.activeElementScrollIntoView(this.getInput(), 1000);
+
+          const activeElement = this.getInput();
+          // const editable = activeElement.getAttribute('contenteditable');
+
+          // 输入框、textarea或富文本获取焦点后没有将该元素滚动到可视区
+          if (activeElement.tagName === 'INPUT' || activeElement.tagName === 'TEXTAREA') {
+            console.log('input 滚动' + JSON.stringify(activeElement));
+            setTimeout(function() {
+              window.scrollTo(0, 250);
+              activeElement.scrollIntoView();
+            }, 100);
+          }
+        }
         // window.addEventListener('resize', function() {
         //   let resizeHeight = document.documentElement.clientHeight || document.body.clientHeight;
         //   console.log('监听到屏幕变化' + resizeHeight);
@@ -360,22 +417,22 @@
         //     // Android 键盘收起后操作
         //     document.body.style.marginBottom = '0px';
         //   } else {
-        console.log('Android 键盘弹起啦！');
+        // console.log('Android 键盘弹起啦！');
         // Android 键盘弹起后操作
-        document.body.style.marginBottom = '250px';
+        // document.body.style.marginBottom = '250px';
         // this.activeElementScrollIntoView(this.getInput(), 1000);
 
-        const activeElement = this.getInput();
-        const editable = activeElement.getAttribute('contenteditable');
+        // const activeElement = this.getInput();
+        // const editable = activeElement.getAttribute('contenteditable');
 
         // 输入框、textarea或富文本获取焦点后没有将该元素滚动到可视区
-        if (activeElement.tagName === 'INPUT' || activeElement.tagName === 'TEXTAREA' || editable === '' || editable) {
-          console.log('input 滚动' + JSON.stringify(activeElement));
-          setTimeout(function() {
-            window.scrollTo(0, 250);
-            activeElement.scrollIntoView();
-          }, 1000);
-        }
+        // if (activeElement.tagName === 'INPUT' || activeElement.tagName === 'TEXTAREA') {
+        //   console.log('input 滚动' + JSON.stringify(activeElement));
+        //   setTimeout(function() {
+        //     window.scrollTo(0, 250);
+        //     activeElement.scrollIntoView();
+        //   }, 100);
+        // }
         // }
 
         //   originHeight = resizeHeight;
