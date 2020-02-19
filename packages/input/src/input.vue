@@ -308,7 +308,7 @@
           this.dispatch('ElFormItem', 'el.form.blur', [this.value]);
         }
 
-        if (this.canScroll()) {
+        if (this.canScroll() && this.getSysType('isAndroid')) {
           console.log('Android 键盘收起啦！');
           // Android 键盘收起后操作
           document.body.style.marginBottom = '0px';
@@ -323,6 +323,17 @@
             }, 100);
           }
         }
+      },
+      getSysType(str) {
+        const ua = navigator.userAgent.toLowerCase();
+        const isIOS = ua.indexOf('ipad') > -1 || ua.indexOf('iphone') > -1 || false;
+        const isAndroid = ua.indexOf('android') > -1 || false;
+
+        const result = {
+          isIOS: isIOS,
+          isAndroid: isAndroid
+        };
+        return result[str];
       },
       select() {
         this.getInput().select();
@@ -378,7 +389,7 @@
         // const scrollValue = originHeight - inputPosition;
         // const scrollFlag = scrollValue < 200;
 
-        if (this.canScroll()) {
+        if (this.canScroll() && this.getSysType('isAndroid')) {
           console.log('Android 键盘弹起啦！');
           // Android 键盘弹起后操作
           document.body.style.marginBottom = '250px';
