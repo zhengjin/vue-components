@@ -38,7 +38,7 @@
       </el-form-item>
 
       <div>
-        <el-button @click="submitForm('ruleForm')" type="danger" style="width: 100%" size="large" round :disabled="false">提交</el-button>
+        <el-button :loading="true" @click="submitForm('ruleForm')" type="danger" style="width: 100%" size="large" round :disabled="false">提交</el-button>
       </div>
       <div>
         <el-button @click="resetForm('ruleForm')" type="danger" style="width: 100%" size="large" round :disabled="true">重置</el-button>
