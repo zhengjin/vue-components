@@ -359,6 +359,7 @@
       updateFocuse(flag) {
         setTimeout(() => {
           this.focused = flag;
+          this.$emit('focus', flag);
         }, 100);
       }
     },

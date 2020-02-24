@@ -57,7 +57,7 @@
         <el-button type="danger" style="width: 100%" size="large" round :disabled="false" @click="showDialog = true">点击打开 Dialog</el-button>
       </div>
 
-      <el-drawer size="25%" :visible.sync="drawer" :direction="direction" :with-header="false" @cancel="drawer = false" @handleContentClick="closeDialog">
+      <el-drawer size="28%" :visible.sync="drawer" :direction="direction" :with-header="false" @cancel="drawer = false" @handleContentClick="closeDialog">
         <div slot="content">
           <template><!--i标签中的id和span中的data-index定位点击的是哪个按钮-->
             <i id="paid" class="el-icon-circle-check cell-center"><span :data-index="1" class="cel-btn-txt">mark as paid</span></i>
