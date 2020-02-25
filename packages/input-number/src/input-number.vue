@@ -8,7 +8,7 @@
       { 'is-without-controls': !controls },
       { 'is-controls-right': controlsAtRight }
     ]">
-    <NumericInput type="number" :layout="PasswordLayout" :placeholder="placeholder" suffixclass="input-style" :maxlength="maxlength"
+    <NumericInput type="number" :layout="PasswordLayout" :placeholder="placeholder" suffixclass="number" :maxlength="maxlength"
                   v-model="displayValue" entertext="Confirm" format="^(?:\d+(?:\.\d{0,2})?)?$" :disabled="inputNumberDisabled"
                   @onFocus="updateFocuse" @blur="handleBlur" @input="handleInput"/>
     <!-- 后置内容 -->
@@ -18,7 +18,7 @@
           <slot name="suffix"></slot>
           <i class="el-input__icon" v-if="suffixIcon" :class="suffixIcon"></i>
         </template>
-        <i :style="{visibility: showClear ? 'visible' : 'hidden'}"
+        <i :style="{visibility: showClear ? 'visible' : 'hidden'}" style="line-height: 20px"
            class="el-input__icon el-icon-error el-input__clear" @mousedown.prevent @click="clear"></i>
       </span>
     </span>

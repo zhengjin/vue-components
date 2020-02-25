@@ -376,7 +376,7 @@
               // Android 键盘弹起后操作
               document.body.style.marginBottom = '250px';
 
-              const activeElement = this.getInput();
+              const activeElement = _this.getInput();
 
               // 输入框、textarea或富文本获取焦点后没有将该元素滚动到可视区
               if (activeElement.tagName === 'INPUT' || activeElement.tagName === 'TEXTAREA') {
@@ -401,7 +401,12 @@
         const inputPosition = getPoint(this.getInput());
         const originHeight = document.documentElement.clientHeight || document.body.clientHeight;
         const scrollValue = originHeight - inputPosition;
-        return scrollValue < 200;
+        const canScroll = scrollValue < 200;
+        console.log('openKeyboard clientHeight property:' + originHeight +
+        ', inputPosition property:' + inputPosition +
+        ', marginBottom property:' + document.body.style.marginBottom +
+        ', can scroll:' + canScroll);
+        return canScroll;
       },
       handleCompositionStart() {
         this.isComposing = true;

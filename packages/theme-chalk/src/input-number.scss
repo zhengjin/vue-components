@@ -9,6 +9,19 @@
   text-align: left;
   //line-height: #{$--input-height - 2};
 
+  .numeric-input {
+    //height: #{$--input-height - 8};
+    line-height: #{$--input-height - 18};
+    font-size:#{$--input-height - 18};
+    width: 77%;
+
+    .number-style{
+      //height: #{$--input-height - 8};
+      line-height: #{$--input-height - 18};
+      font-size:#{$--input-height - 18};
+    }
+  }
+
   .input-style {
     height: $--input-height !important;
     line-height: $--input-height !important;
