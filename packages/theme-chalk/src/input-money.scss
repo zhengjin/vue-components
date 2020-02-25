@@ -9,10 +9,10 @@
   text-align: left;
   //line-height: #{$--input-height - 2};
 
-  .numeric-input {
-    height: $--input-height;
-    line-height: $--input-height;
-    font-size: $--input-height;
+  .money-input {
+    height: $--input-height !important;
+    line-height: $--input-height !important;
+    font-size: $--input-height !important;
     width: 77%;
   }
 

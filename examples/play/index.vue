@@ -69,6 +69,9 @@
       <div>
         <el-button type="danger" style="width: 100%" size="large" round :disabled="false" @click="drawer = true">点击打开 ActionSheet</el-button>
       </div>
+      <el-form-item label="确认密码" prop="checkPass">
+        <el-input type="password" v-model="ruleForm.checkPass" clearable placeholder="请输入内容" :disabled="false"></el-input>
+      </el-form-item>
     </el-form>
   </div>
 </template>
