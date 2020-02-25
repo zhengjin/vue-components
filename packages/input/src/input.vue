@@ -316,7 +316,7 @@
               // Android 键盘收起后操作
               document.body.style.marginBottom = '0px';
 
-              const activeElement = this.getInput();
+              const activeElement = _this.getInput();
 
               // 输入框、textarea或富文本获取焦点后没有将该元素滚动到可视区
               if (activeElement.tagName === 'INPUT' || activeElement.tagName === 'TEXTAREA') {
