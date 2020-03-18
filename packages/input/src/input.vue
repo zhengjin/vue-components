@@ -1,6 +1,5 @@
 <template>
-  <div :class="[
-    type === 'textarea' ? 'el-textarea' : 'el-input',
+  <div :class="[type === 'textarea' ? 'el-textarea' : 'el-input',
     inputSize ? 'el-input--' + inputSize : '',
     {
       'is-disabled': inputDisabled,
@@ -10,33 +9,31 @@
       'el-input-group--prepend': $slots.prepend,
       'el-input--prefix': $slots.prefix || prefixIcon,
       'el-input--suffix': $slots.suffix || suffixIcon || clearable || showPassword
-    }
-    ]"
-    @mouseenter="hovering = true"
-    @mouseleave="hovering = false">
+    }]"
+       @mouseenter="hovering = true"
+       @mouseleave="hovering = false">
     <template v-if="type !== 'textarea'">
       <!-- 前置元素 -->
       <div class="el-input-group__prepend" v-if="$slots.prepend">
         <slot name="prepend"></slot>
       </div>
-      <input
-        :tabindex="tabindex"
-        v-if="type !== 'textarea'"
-        class="el-input__inner"
-        v-bind="$attrs"
-        :type="showPassword ? (passwordVisible ? 'text': 'password') : type"
-        :disabled="inputDisabled"
-        :readonly="readonly"
-        :autocomplete="autoComplete || autocomplete"
-        ref="input"
-        @compositionstart="handleCompositionStart"
-        @compositionupdate="handleCompositionUpdate"
-        @compositionend="handleCompositionEnd"
-        @input="handleInput"
-        @focus="handleFocus"
-        @blur="handleBlur"
-        @change="handleChange"
-        :aria-label="label">
+      <input :tabindex="tabindex"
+              v-if="type !== 'textarea'"
+              class="el-input__inner"
+              v-bind="$attrs"
+              :type="showPassword ? (passwordVisible ? 'text': 'password') : type"
+              :disabled="inputDisabled"
+              :readonly="readonly"
+              :autocomplete="autoComplete || autocomplete"
+              ref="input"
+              @compositionstart="handleCompositionStart"
+              @compositionupdate="handleCompositionUpdate"
+              @compositionend="handleCompositionEnd"
+              @input="handleInput"
+              @focus="handleFocus"
+              @blur="handleBlur"
+              @change="handleChange"
+              :aria-label="label">
       <!-- 前置内容 -->
       <span class="el-input__prefix" v-if="$slots.prefix || prefixIcon">
         <slot name="prefix"></slot>
@@ -50,15 +47,15 @@
           <template v-if="!showClear || !showPwdVisible || !isWordLimitVisible">
             <slot name="suffix"></slot>
             <i class="el-input__icon"
-              v-if="suffixIcon" :class="suffixIcon">
+               v-if="suffixIcon" :class="suffixIcon">
             </i>
           </template>
           <i v-if="showClear" class="el-input__icon el-icon-error el-input__clear"
-            @mousedown.prevent @click="clear">
+             @mousedown.prevent @click="clear">
           </i>
           <i v-if="showPwdVisible"
-            class="el-input__icon el-icon-view el-input__clear"
-            @click="handlePasswordVisible"
+             class="el-input__icon el-icon-view el-input__clear"
+             @click="handlePasswordVisible"
           ></i>
           <span v-if="isWordLimitVisible" class="el-input__count">
             <span class="el-input__count-inner">
@@ -73,24 +70,23 @@
         <slot name="append"></slot>
       </div>
     </template>
-    <textarea
-      v-else
-      :tabindex="tabindex"
-      class="el-textarea__inner"
-      @compositionstart="handleCompositionStart"
-      @compositionupdate="handleCompositionUpdate"
-      @compositionend="handleCompositionEnd"
-      @input="handleInput"
-      ref="textarea"
-      v-bind="$attrs"
-      :disabled="inputDisabled"
-      :readonly="readonly"
-      :autocomplete="autoComplete || autocomplete"
-      :style="textareaStyle"
-      @focus="handleFocus"
-      @blur="handleBlur"
-      @change="handleChange"
-      :aria-label="label"
+    <textarea v-else
+            :tabindex="tabindex"
+            class="el-textarea__inner"
+            @compositionstart="handleCompositionStart"
+            @compositionupdate="handleCompositionUpdate"
+            @compositionend="handleCompositionEnd"
+            @input="handleInput"
+            ref="textarea"
+            v-bind="$attrs"
+            :disabled="inputDisabled"
+            :readonly="readonly"
+            :autocomplete="autoComplete || autocomplete"
+            :style="textareaStyle"
+            @focus="handleFocus"
+            @blur="handleBlur"
+            @change="handleChange"
+            :aria-label="label"
     >
     </textarea>
     <span v-if="isWordLimitVisible && type === 'textarea'" class="el-input__count">{{ textLength }}/{{ upperLimit }}</span>
@@ -158,7 +154,7 @@
         type: String,
         validator(val) {
           process.env.NODE_ENV !== 'production' &&
-            console.warn('[Element Warn][Input]\'auto-complete\' property will be deprecated in next major version. please use \'autocomplete\' instead.');
+          console.warn('[Element Warn][Input]\'auto-complete\' property will be deprecated in next major version. please use \'autocomplete\' instead.');
           return true;
         }
       },
@@ -242,6 +238,7 @@
           !this.showPassword;
       },
       upperLimit() {
+        console.log('get input max length' + this.$attrs.maxlength);
         return this.$attrs.maxlength;
       },
       textLength() {
@@ -362,7 +359,8 @@
         const input = this.getInput();
         if (!input) return;
         if (input.value === this.nativeInputValue) return;
-        input.value = this.nativeInputValue;
+        // input.value = this.substringByByte3(this.nativeInputValue, 5);
+        input.value = this.upperLimit ? this.substringByByte3(this.nativeInputValue, this.upperLimit) : this.nativeInputValue;
       },
       handleFocus(event) {
         this.focused = true;
@@ -403,9 +401,9 @@
         const scrollValue = originHeight - inputPosition;
         const canScroll = scrollValue < 200;
         console.log('openKeyboard clientHeight property:' + originHeight +
-        ', inputPosition property:' + inputPosition +
-        ', marginBottom property:' + document.body.style.marginBottom +
-        ', can scroll:' + canScroll);
+          ', inputPosition property:' + inputPosition +
+          ', marginBottom property:' + document.body.style.marginBottom +
+          ', can scroll:' + canScroll);
         return canScroll;
       },
       handleCompositionStart() {
@@ -431,7 +429,7 @@
         // should remove the following line when we don't support IE
         if (event.target.value === this.nativeInputValue) return;
 
-        this.$emit('input', event.target.value);
+        this.$emit('input', this.upperLimit ? this.substringByByte3(event.target.value, this.upperLimit) : event.target.value);
 
         // ensure native input value is controlled
         // see: https://github.com/ElemeFE/element/issues/12850
@@ -486,6 +484,73 @@
           this.showPassword ||
           this.isWordLimitVisible ||
           (this.validateState && this.needStatusIcon);
+      },
+      /* 通过文字二进制得到文字字节数 */
+      getByteByHex(hexCode) {
+        return this.getByteByBinary(parseInt(hexCode, 16).toString(2));
+      },
+      /* 通过文字十六进制得到文字字节数 */
+      getByteByBinary(binaryCode) {
+        /**
+         * 二进制 Binary system,es6表示时以0b开头
+         * 八进制 Octal number system,es5表示时以0开头,es6表示时以0o开头
+         * 十进制 Decimal system
+         * 十六进制 Hexadecimal,es5、es6表示时以0x开头
+         */
+        const byteLengthDatas = [0, 1, 2, 3, 4];
+        return byteLengthDatas[Math.ceil(binaryCode.length / 8)];
+      },
+      substringByByte3(str, maxLength) {
+        let result = '';
+        let flag = false;
+        let len = 0;
+        let length = 0;
+        let length2 = 0;
+        for (let i = 0; i < str.length; i++) {
+          let code = str.codePointAt(i).toString(16);
+          if (code.length > 4) {
+            i++;
+            if ((i + 1) < str.length) {
+              flag = str.codePointAt(i + 1).toString(16) === '200d';
+            }
+          }
+          if (flag) {
+            len += this.getByteByHex(code);
+            if (i === str.length - 1) {
+              length += len;
+              if (length <= maxLength) {
+                result += str.substr(length2, i - length2 + 1);
+              } else {
+                break;
+              }
+            }
+          } else {
+            if (len !== 0) {
+              length += len;
+              length += this.getByteByHex(code);
+              if (length <= maxLength) {
+                result += str.substr(length2, i - length2 + 1);
+                length2 = i + 1;
+              } else {
+                break;
+              }
+              len = 0;
+              continue;
+            }
+            length += this.getByteByHex(code);
+            if (length <= maxLength) {
+              if (code.length <= 4) {
+                result += str[i];
+              } else {
+                result += str[i - 1] + str[i];
+              }
+              length2 = i + 1;
+            } else {
+              break;
+            }
+          }
+        }
+        return result;
       }
     },
 
