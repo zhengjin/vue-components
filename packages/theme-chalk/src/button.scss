@@ -12,6 +12,7 @@
   background: $--button-default-background-color;
   border: $--border-base;
   border-color: $--button-default-border-color;
+  box-shadow: 0 .24rem .48rem 0 rgba(229,12,43,0.3);
   color: $--button-default-font-color;
   -webkit-appearance: none;
   text-align: center;
@@ -36,6 +37,7 @@
   }
 
   &:active {
+    box-shadow: none;
     color: mix($--color-black, $--color-primary, $--button-active-shade-percent);
     border-color: mix($--color-black, $--color-primary, $--button-active-shade-percent);
     outline: none;
@@ -73,6 +75,7 @@
   }
 
   @include when(disabled) {
+    box-shadow: none;
     &,
     &:hover,
     &:focus {
@@ -99,6 +102,7 @@
   }
 
   @include when(loading) {
+    box-shadow: none;
     position: relative;
     pointer-events: none;
 
