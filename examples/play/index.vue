@@ -8,7 +8,7 @@
       </el-form-item>
 
       <el-form-item label="确认密码" prop="checkPass">
-        <el-input type="password" v-model="ruleForm.checkPass" clearable placeholder="请输入内容" :disabled="false"></el-input>
+        <el-input maxlength="9" v-model="ruleForm.checkPass" clearable placeholder="请输入内容" :disabled="false"></el-input>
       </el-form-item>
 
       <div>
@@ -33,15 +33,15 @@
         <el-avatar :size="medium" :src="circleUrl"></el-avatar>
       </div>
 
-      <el-form-item label="年龄" prop="age">
-        <el-input-number :maxlength="6" type="number" v-model.number="ruleForm.age" clearable placeholder="0" :disabled="false"></el-input-number>
+      <el-form-item label="年龄" prop="pass">
+        <el-input-number :maxlength="6" type="number" v-model.number="ruleForm.pass" clearable placeholder="0" :disabled="false"></el-input-number>
       </el-form-item>
 
       <div>
-        <el-button :loading="true" @click="submitForm('ruleForm')" type="danger" style="width: 100%" size="large" round :disabled="false">提交</el-button>
+        <el-button :loading="true" @click.native="submitForm('ruleForm')" type="danger" style="width: 100%" size="large" round :disabled="false">提交</el-button>
       </div>
       <div>
-        <el-button @click="resetForm('ruleForm')" type="danger" style="width: 100%" size="large" round :disabled="true">重置</el-button>
+        <el-button @click.native="resetForm('ruleForm')" type="danger" style="width: 100%" size="large" round :disabled="true">重置</el-button>
       </div>
 
       <el-dialog :visible.sync="centerDialogVisible" width="30%" center :show-cancle="true" :confirm-btn-plain="true"
@@ -54,7 +54,7 @@
         <p slot="confirm">See reward</p>
       </el-dialog>
       <div>
-        <el-button type="danger" style="width: 100%" size="large" round :disabled="false" @click="showDialog = true">点击打开 Dialog</el-button>
+        <el-button type="danger" style="width: 100%" size="large" round :disabled="false" @click.native="showDialog = true">点击打开 Dialog</el-button>
       </div>
 
       <el-drawer size="28%" :visible.sync="drawer" :direction="direction" :with-header="false" @cancel="drawer = false" @handleContentClick="closeDialog">
@@ -67,11 +67,8 @@
         <p slot="cancel" class="cell-center" style="height: 1.1rem">Cancel</p>
       </el-drawer>
       <div>
-        <el-button type="danger" style="width: 100%" size="large" round :disabled="false" @click="drawer = true">点击打开 ActionSheet</el-button>
+        <el-button type="danger" style="width: 100%" size="large" round :disabled="false" @click.native="drawer = true">点击打开 ActionSheet</el-button>
       </div>
-      <el-form-item label="确认密码" prop="checkPass">
-        <el-input type="password" v-model="ruleForm.checkPass" clearable placeholder="请输入内容" :disabled="false"></el-input>
-      </el-form-item>
     </el-form>
   </div>
 </template>
