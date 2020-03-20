@@ -97,7 +97,6 @@
   </div>
 </template>
 <script>
-  /* eslint-disable no-debugger */
   import Vue from 'vue';
 
   import emitter from 'overseas-vue/src/mixins/emitter';

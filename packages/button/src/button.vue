@@ -1,7 +1,7 @@
 <template>
   <button
     class="el-button"
-    @click.native="handleClick"
+    @click="handleClick"
     :disabled="buttonDisabled || loading"
     :autofocus="autofocus"
     :type="nativeType"

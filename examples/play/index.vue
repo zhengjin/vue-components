@@ -54,7 +54,7 @@
         <p slot="confirm">See reward</p>
       </el-dialog>
       <div>
-        <el-button type="danger" style="width: 100%" size="large" round :disabled="false" @click.native="showDialog = true">点击打开 Dialog</el-button>
+        <el-button type="danger" style="width: 100%" size="large" round :disabled="false" @click="showDialog = true">点击打开 Dialog</el-button>
       </div>
 
       <el-drawer size="28%" :visible.sync="drawer" :direction="direction" :with-header="false" @cancel="drawer = false" @handleContentClick="closeDialog">
