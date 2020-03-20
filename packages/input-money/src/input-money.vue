@@ -26,8 +26,6 @@
   </div>
 </template>
 <script>
-  /* eslint-disable no-debugger */
-
   import emitter from 'overseas-vue/src/mixins/emitter';
   import Focus from 'overseas-vue/src/mixins/focus';
   import RepeatClick from 'overseas-vue/src/directives/repeat-click';
