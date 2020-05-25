@@ -8,6 +8,7 @@
   "main": "lib/overseas-vue.common.js",
   "files": [
     "lib",
+    "src",
     "types"
   ],
   "typings": "types/index.d.ts",
