@@ -1,4 +1,4 @@
-import { kebabCase } from 'overseas-vue/src/utils/util';
+import { kebabCase } from '../utils/util';
 /**
  * Show migrating guide in browser console.
  *
