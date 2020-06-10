@@ -1,6 +1,6 @@
 {
   "name": "overseas-vue",
-  "version": "0.0.62",
+  "version": "0.0.63",
   "description": "team components",
   "author": "zhengjin12@aliyun.comm",
   "private": false,
@@ -65,7 +65,7 @@
     "deepmerge": "^1.2.0",
     "normalize-wheel": "^1.0.1",
     "vue-touch": "^2.0.0-beta.4",
-    "overseas-numeric-keyboard": "0.0.47",
+    "overseas-numeric-keyboard": "0.0.48",
     "resize-observer-polyfill": "^1.5.0",
     "throttle-debounce": "^1.0.1"
   },
