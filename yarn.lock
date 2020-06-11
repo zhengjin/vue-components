@@ -7038,10 +7038,10 @@ output-file-sync@^1.1.2:
     mkdirp "^0.5.1"
     object-assign "^4.1.0"
 
-overseas-numeric-keyboard@0.0.61:
-  version "0.0.61"
-  resolved "https://registry.npmjs.org/overseas-numeric-keyboard/-/overseas-numeric-keyboard-0.0.61.tgz#51b034e3e808bd73b6aa421792ad092278b43cfa"
-  integrity sha512-b0P6nUjtXsPReLcUypPWj5QQO7L1fjkfUC9g21gDiUZFbT7Vo6+jF7R1BIzOm8ZljoOMT2J6F/Pufrlywwk4vg==
+overseas-numeric-keyboard@0.0.62:
+  version "0.0.62"
+  resolved "https://registry.npmjs.org/overseas-numeric-keyboard/-/overseas-numeric-keyboard-0.0.62.tgz#fd8a172de42d320950f7614c5a8357d7986d2a20"
+  integrity sha512-rF/BpSv0Rw7nJLyIhYmNpN51oYtUOCf5ZyFVtYZTVif0Zklwf/j8zZsOY056YHqEghyx/QJUi2Ml08gPFipQJQ==
 
 p-defer@^1.0.0:
   version "1.0.0"
