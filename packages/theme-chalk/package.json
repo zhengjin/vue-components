@@ -1,6 +1,6 @@
 {
   "name": "oversea-theme-chalk",
-  "version": "0.0.77",
+  "version": "0.0.78",
   "description": "Element component chalk theme.",
   "main": "lib/index.css",
   "style": "lib/index.css",
