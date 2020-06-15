@@ -313,7 +313,7 @@
             if (_this.canScroll() && _this.getSysType('isAndroid')) {
               console.log('Android 键盘收起啦！');
               // Android 键盘收起后操作
-              document.body.style.marginBottom = '0px';
+              // document.body.style.marginBottom = '0px';
 
               const activeElement = _this.getInput();
 
@@ -373,7 +373,7 @@
             if (_this.canScroll() && _this.getSysType('isAndroid')) {
               console.log('Android 键盘弹起啦！');
               // Android 键盘弹起后操作
-              document.body.style.marginBottom = '250px';// 发现三星部分手机有弹起问题
+              // document.body.style.marginBottom = '250px';// 发现三星部分手机有弹起问题
 
               const activeElement = _this.getInput();
 
