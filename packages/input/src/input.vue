@@ -374,7 +374,9 @@
               console.log('Android 键盘弹起啦！UA ' + navigator.userAgent);
               // Android 键盘弹起后操作
               // document.body.style.height = window.screen.availHeight + 'px';
-              // document.body.style.marginBottom = '250px';// 发现三星部分手机有弹起问题
+              if (_this.judgeBrand(navigator.userAgent.toLowerCase()) !== 'huawei') {
+                document.body.style.marginBottom = '250px'; // 发现三星部分手机有弹起问题
+              }
 
               const activeElement = _this.getInput();
 
@@ -393,6 +395,34 @@
             }
           });
         }, 100);
+      },
+      judgeBrand(sUserAgent) {
+        const isIphone = sUserAgent.match(/iphone/i) === 'iphone';
+        const isHuawei = sUserAgent.match(/huawei/i) === 'huawei';
+        const isHonor = sUserAgent.match(/honor/i) === 'honor';
+        const isOppo = sUserAgent.match(/oppo/i) === 'oppo';
+        const isOppoR15 = sUserAgent.match(/pacm00/i) === 'pacm00';
+        const isVivo = sUserAgent.match(/vivo/i) === 'vivo';
+        const isXiaomi = sUserAgent.match(/mi\s/i) === 'mi ';
+        const isXiaomi2s = sUserAgent.match(/mix\s/i) === 'mix ';
+        const isRedmi = sUserAgent.match(/redmi/i) === 'redmi';
+        const isSamsung = sUserAgent.match(/sm-/i) === 'sm-';
+
+        if (isIphone) {
+          return 'iphone';
+        } else if (isHuawei || isHonor) {
+          return 'huawei';
+        } else if (isOppo || isOppoR15) {
+          return 'oppo';
+        } else if (isVivo) {
+          return 'vivo';
+        } else if (isXiaomi || isRedmi || isXiaomi2s) {
+          return 'xiaomi';
+        } else if (isSamsung) {
+          return 'samsung';
+        } else {
+          return 'default';
+        }
       },
       canScroll() {
         let getPoint = (obj) => {
