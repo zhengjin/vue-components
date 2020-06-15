@@ -313,7 +313,7 @@
             if (_this.canScroll() && _this.getSysType('isAndroid')) {
               console.log('Android 键盘收起啦！');
               // Android 键盘收起后操作
-              // document.body.style.marginBottom = '0px';
+              document.body.style.marginBottom = '0px';
 
               const activeElement = _this.getInput();
 
