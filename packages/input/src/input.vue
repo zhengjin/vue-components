@@ -374,7 +374,7 @@
               console.log('Android 键盘弹起啦！UA ' + navigator.userAgent);
               // Android 键盘弹起后操作
               // document.body.style.height = window.screen.availHeight + 'px';
-              document.body.style.marginBottom = '250px';// 发现三星部分手机有弹起问题
+              // document.body.style.marginBottom = '250px';// 发现三星部分手机有弹起问题
 
               const activeElement = _this.getInput();
 
@@ -382,7 +382,8 @@
               if (activeElement.tagName === 'INPUT' || activeElement.tagName === 'TEXTAREA') {
                 // console.log('input 滚动' + JSON.stringify(activeElement));
                 setTimeout(function() {
-                  window.scrollTo(0, 250);
+                  const scrollOptions = {top: 250, left: 0, behavior: 'smooth'};
+                  window.scroll(scrollOptions);
                   // activeElement.scrollIntoView();
                   // activeElement.scrollIntoViewIfNeeded();
                   // document.activeElement.scrollIntoViewIfNeeded();
