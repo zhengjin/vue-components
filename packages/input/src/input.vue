@@ -320,8 +320,9 @@
               // 输入框、textarea或富文本获取焦点后没有将该元素滚动到可视区
               if (activeElement.tagName === 'INPUT' || activeElement.tagName === 'TEXTAREA') {
                 setTimeout(function() {
-                  window.scrollTo(0, 0);
-                  activeElement.scrollIntoView();
+                  const scrollOptions = {top: 0, left: 0, behavior: 'smooth'};
+                  window.scroll(scrollOptions);
+                  // activeElement.scrollIntoView();
                 }, 100);
               }
             }
@@ -374,7 +375,8 @@
               console.log('Android 键盘弹起啦！UA ' + navigator.userAgent);
               // Android 键盘弹起后操作
               // document.body.style.height = window.screen.availHeight + 'px';
-              if (_this.judgeBrand(navigator.userAgent.toLowerCase()) !== 'huawei') {
+              if (_this.judgeBrand(navigator.userAgent.toLowerCase()) !== 'huawei' ||
+              _this.judgeBrand(navigator.userAgent.toLowerCase()) !== 'samsung') {
                 document.body.style.marginBottom = '250px'; // 发现三星部分手机有弹起问题
               }
 
