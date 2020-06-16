@@ -375,8 +375,8 @@
               console.log('Android 键盘弹起啦！UA ' + navigator.userAgent);
               // Android 键盘弹起后操作
               // document.body.style.height = window.screen.availHeight + 'px';
-              if (_this.judgeBrand(navigator.userAgent.toLowerCase()) !== 'huawei' ||
-              _this.judgeBrand(navigator.userAgent.toLowerCase()) !== 'samsung') {
+              if (!(_this.judgeBrand(navigator.userAgent.toLowerCase()) === 'huawei' ||
+                _this.judgeBrand(navigator.userAgent.toLowerCase()) === 'samsung')) {
                 document.body.style.marginBottom = '250px'; // 发现三星部分手机有弹起问题
               }
 
