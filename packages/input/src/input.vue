@@ -400,15 +400,15 @@
       },
       judgeBrand(sUserAgent) {
         const isIphone = sUserAgent.match(/iphone/i) === 'iphone';
-        const isHuawei = sUserAgent.match(/huawei/i) === 'huawei';
-        const isHonor = sUserAgent.match(/honor/i) === 'honor';
+        const isHuawei = sUserAgent.match(/huawei/i).map(item => (item === 'huawei'));
+        const isHonor = sUserAgent.match(/honor/i).map(item => (item === 'honor'));
         const isOppo = sUserAgent.match(/oppo/i) === 'oppo';
         const isOppoR15 = sUserAgent.match(/pacm00/i) === 'pacm00';
         const isVivo = sUserAgent.match(/vivo/i) === 'vivo';
         const isXiaomi = sUserAgent.match(/mi\s/i) === 'mi ';
         const isXiaomi2s = sUserAgent.match(/mix\s/i) === 'mix ';
         const isRedmi = sUserAgent.match(/redmi/i) === 'redmi';
-        const isSamsung = sUserAgent.match(/sm-/i) === 'sm-';
+        const isSamsung = sUserAgent.match(/sm-/i).map(item => (item === 'sm-'));
 
         if (isIphone) {
           return 'iphone';
