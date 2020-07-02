@@ -404,9 +404,9 @@
         const isIphone = sUserAgent.match(/iphone/i) === 'iphone';
         const isHuawei = sUserAgent.match(/huawei/i) && sUserAgent.match(/huawei/i).map(item => (item === 'huawei'));
         const isHonor = sUserAgent.match(/honor/i) && sUserAgent.match(/honor/i).map(item => (item === 'honor'));
-        const isOppo = sUserAgent.match(/oppo/i) === 'oppo';
+        const isOppo = sUserAgent.match(/oppo/i) && sUserAgent.match(/oppo/i).map(item => (item === 'oppo'));
         const isOppoR15 = sUserAgent.match(/pacm00/i) === 'pacm00';
-        const isVivo = sUserAgent.match(/vivo/i) === 'vivo';
+        const isVivo = sUserAgent.match(/vivo/i) && sUserAgent.match(/vivo/i).map(item => (item === 'vivo'));
         const isXiaomi = sUserAgent.match(/mi\s/i) === 'mi ';
         const isXiaomi2s = sUserAgent.match(/mix\s/i) === 'mix ';
         const isRedmi = sUserAgent.match(/redmi/i) === 'redmi';
