@@ -378,7 +378,8 @@
               if (!(_this.judgeBrand(navigator.userAgent.toLowerCase()) === 'huawei' ||
                 _this.judgeBrand(navigator.userAgent.toLowerCase()) === 'samsung' ||
                 _this.judgeBrand(navigator.userAgent.toLowerCase()) === 'oppo' ||
-                _this.judgeBrand(navigator.userAgent.toLowerCase()) === 'vivo')) {
+                _this.judgeBrand(navigator.userAgent.toLowerCase()) === 'vivo' ||
+                _this.judgeBrand(navigator.userAgent.toLowerCase()) === 'oneplus')) {
                 document.body.style.marginBottom = '250px'; // 发现三星部分手机有弹起问题
               }
 
@@ -410,6 +411,7 @@
         const isXiaomi = sUserAgent.match(/mi\s/i) === 'mi ';
         const isXiaomi2s = sUserAgent.match(/mix\s/i) === 'mix ';
         const isRedmi = sUserAgent.match(/redmi/i) === 'redmi';
+        const isOneplus = sUserAgent.match(/oneplus/i) && sUserAgent.match(/oneplus/i).map(item => (item === 'oneplus'));
         const isSamsung = sUserAgent.match(/sm-/i) && sUserAgent.match(/sm-/i).map(item => (item === 'sm-')); // navigator.userAgent.match(/SAMSUNG|Samsung|SGH-[I|N|T]|GT-[I|N]|SM-[A|N|P|T|Z]|SHV-E|SCH-[I|J|R|S]|SPH-L/i)
 
         if (isIphone) {
@@ -424,6 +426,8 @@
           return 'xiaomi';
         } else if (isSamsung) {
           return 'samsung';
+        } else if (isOneplus) {
+          return 'oneplus';
         } else {
           return 'default';
         }
